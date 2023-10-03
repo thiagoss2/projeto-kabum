@@ -1,0 +1,37 @@
+@import url("../css/root.css");
+
+
+
+.conteudo-dev {
+  background-color:
+  #F8FAFB;
+  margin-top: 50px;
+  display: none;
+}
+
+.conteudo-dev__titulo {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.conteudo-dev__subtitulo {
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.conteudo-dev__caixa-superior {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #0ac5d4;
+  padding-bottom: 10px;
+  padding-top: 50px;
+}
+.conteudo-dev__bloco-itens {
+  padding: 10px;
+}
+
+.conteudo-dev__item-lista {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding-left: 15px;
+}

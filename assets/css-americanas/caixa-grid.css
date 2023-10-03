@@ -1,0 +1,17 @@
+.caixa-grid {
+   background-color: aqua;
+   
+   height: 10vh;
+
+   display: grid;
+   grid-template-columns: repeat( 4 , 300px);
+   grid-template-rows: repeat(2 , 304px);
+   
+    gap: 10px;
+
+   
+
+   padding: 0 90px;
+
+
+}

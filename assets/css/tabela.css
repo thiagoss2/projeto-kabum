@@ -1,0 +1,148 @@
+:root {
+   --cor-verde:#159867;
+   --cor-cinza: #323546;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+input {
+   background-color: transparent;
+   height: 20px;
+   padding: 15px;
+   color: var(--cor-verde) ;
+   font-size: 15px;
+   border: none;
+   width: 120px;
+}
+input::placeholder {
+   color: #fff ;
+   font-size: 17px;
+}
+body {
+   background-color: #17171a;
+   color: #fff;
+   font-family: 'Roboto', sans-serif;
+}
+
+.tabelas {
+   display: flex;
+   justify-content: space-between;
+}
+
+.tabela {
+   padding: 10px;
+   width: 100%;
+   margin-bottom: 30px;
+   width: 50%;
+}
+
+.tabela-cabecalho {
+   font-weight: 600;
+}
+
+.tabela-cabecalho .tabela__coluna {
+   padding-bottom: 30px;
+}
+
+.tabela__coluna {
+   padding: 10px 0;
+} 
+.tabela__coluna span {
+   color: var(--cor-verde);
+   font-weight: 500;
+}
+
+.tabela__coluna  img {
+   border-radius: 20px;
+
+}
+
+.tabela__linha {
+   position: relative;
+
+}
+
+.tabela__linha:hover {
+   background-color: #323546;
+}
+
+.tabela__linha::before {
+   content: '';
+   background-color: #222531;
+   width: 100%;
+   height: 2px;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+
+}
+
+.tabela__linha:hover {
+
+}
+
+.tabela-grid__item-lista {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   padding: 0 15px;
+
+}
+.tabela-grid__lista {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+
+.tabela-grid__lista:hover {
+   background-color: #323546;
+}
+.tabela-grid__perfil {
+   display: flex;
+   gap: 15px;
+   align-items: center;
+}
+
+.tabela-grid-__imagem {
+   border-radius: 20px;
+   width: 25px;
+   height: 25px;
+}
+
+.pai  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: 2s ease;
+
+}
+
+.pai .imagem img {
+  width: 100%;
+}
+
+.conteudo h2 {
+  font-size: 3rem;
+}
+
+.conteudo p {
+  font-size: .8rem;
+  margin-bottom: 1.5rem;
+}
+
+.pai .conteudo a {
+  background-color:transparent;
+  padding: 10px 15px;
+  border: none;
+  text-transform: capitalize;
+  border: 1px solid #159867;
+  border-radius: 8px;
+}
+
+.pai .conteudo a:hover {
+  background-color: #159867;
+  border: none;
+}

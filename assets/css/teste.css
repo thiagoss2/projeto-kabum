@@ -1,0 +1,11 @@
+
+@import url("../css/root.css");
+
+body {
+    font-style: sans-serif;
+    background-color: var(--cor-fundo);
+    font-family: 'Roboto', sans-serif;
+}
+
+
+

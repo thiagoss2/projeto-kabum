@@ -1,0 +1,2166 @@
+:root {
+
+  /* SINTAXE ROOT 
+
+    --nomeDaVariavel : valor;
+     */
+
+  /* CORES */
+
+  /* hslA( TOM 1-360° , SATURAÇÃO , LUMINOSIDADE , ALFA) */
+  --spanish-gray: hsl(0, 0%, 60%);
+  --sonic-silver: hsl(0, 0%, 47%);
+  --eerie-blacK: hsl(0, 0%, 13%);
+  --salmon-pink: hsl(353, 100%, 78%);
+  --sansy-brown: hsl(29, 90%, 65%);
+  --bittersweet: hsl(0, 100%, 70%);
+  --ocean-green: hsl(152, 51%, 52%);
+  --davis-gray: hsl(0, 0%, 33%);
+  --cultured: hsl(0, 0%, 93%);
+  --white: hsl(0, 100%, 100%);
+  --onix: hsl(0, 0%, 27%);
+
+  /* TIPOGRAFIA */
+  --poppins: "Poppins", sans-serif;
+  --fs-1: 1.563rem;
+  --fs-2: 1.375rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.125rem;
+  --fs-5: 1rem;
+  --fs-6: 0.938rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.813rem;
+  --fs-9: 0.75rem;
+  --fs-10: 0.688rem;
+  --fs-11: 0.625rem;
+  /* PESO DA FONTE */
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+  /* RAIO DA BORDA */
+  --border-radius-md: 10px;
+  --border-radius-sm: 5px;
+  /* TRANSIÇÃO */
+  --transition-timing: 0.2s ease;
+}
+
+/* ======================== RESET ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+img,
+ion-icon,
+button,
+a {
+  display: block;
+}
+
+span {
+  display: inline-block;
+}
+
+html {
+  font-family: var(--poppins);
+  overscroll-behavior: contain;
+}
+
+input {
+  width: 100%;
+  display: block;
+  font: inherit;
+}
+
+input::placeholder {
+  font: inherit;
+}
+
+body {
+  background-color: var(--white);
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--white);
+  border-left: 1px solid var(--cultured);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(0, 0%, 80%);
+  border: 3px solid var(--white);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
+}
+
+/* ======================= PROPIEDADES CUSTOMIZADAS ======================================================= */
+.container {
+  padding: 0 15px;
+}
+
+.barra-rolagem {
+  padding-bottom: 5px;
+}
+
+/* parte de baixo da barra */
+.barra-rolagem::-webkit-scrollbar {
+  width: 12px;
+  /* para scroll vertical*/
+  height: 12px;
+  /* para scroll horizontal*/
+
+}
+
+/* parte de cima da barra */
+.barra-rolagem::-webkit-scrollbar-thumb {
+  background: transparent;
+  /*por padrao fica trasparent*/
+  border: 3px solid var(--white);
+  border-radius: 20px;
+}
+
+/* quando passamos o mouse no container a barra muda de cor */
+.barra-rolagem:hover::-webkit-scrollbar-thumb {
+  /* quando passa o mouse no menu lateral a barra fica com cor */
+  background: hsl(0, 0%, 90%);
+
+}
+
+/* quando passar o mouse na barra de rolagem */
+.barra-rolagem::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 80%);
+
+
+}
+
+.titulo {
+  font-size: var(--fs-5);
+  color: var(--eerie-blacK);
+  font-weight: var(--weight-600);
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--cultured);
+  margin-bottom: 30px;
+}
+
+/* =========================== TELA SOBREPOSTA  ============================================================== */
+/* OCULTO POR PADRAO */
+.tela-sobreposta {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: hsla(0, 0%, 0%, 0.5);
+  width: 100%;
+  height: 100vw;
+  opacity: 0;
+  pointer-events: none;
+  /*desabilita o clique do mouse*/
+  z-index: 15;
+  /*coloca ele na frente de tosos os elementos z-index:15*/
+  transform: 0.5s ease;
+
+
+}
+
+/*MOSTRAR PELO JAVASCRIPT*/
+.tela-sobreposta.ativo {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+
+}
+
+/* ======================= MODAL ========================================================================== */
+/* PARTE ESCURA DA TELA QUE É PAI DE NOTICIAS */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsla(0, 0%, 0%, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 10;
+  /* animation: popup 1s ease-in-out 5s forwards;  */
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    z-index: 10;
+  }
+}
+
+.modal.fechado {
+  display: none;
+}
+
+/* sobreposição do modal */
+.modal-close-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+
+.newsletter-img {
+  display: none;
+}
+
+/* COMO O TAMANHO DO MODAL É PEQUENO
+SOBRA ESPAÇO PARA CENTRALIZAR O CONTEUDO
+ */
+/* PARTE BRANCA */
+.modal-conteudo {
+  position: relative;
+  max-width: 350px;
+  margin: 20px;
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  animation: scaleUp 0.5s ease-in-out 5s forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal__btn-x {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--salmon-pink);
+  color: white;
+  font-size: 16px;
+  border-radius: var(--border-radius-sm);
+
+}
+
+.modal__btn-x:hover {
+  opacity: 0.9;
+}
+
+.modal__btn-x ion-icon {
+  --ionicon-stroke-width: 70px;
+
+}
+
+.modal-noticias {
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.modal-noticias__cabecalho {
+  margin-bottom: 20px;
+}
+
+.modal-noticias__titulo {
+  color: var(--onix);
+  font-size: var(--fs-2);
+  font-weight: var(--weight-600);
+  margin-bottom: 10px;
+}
+
+.modal-noticias__descricao {
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+  line-height: 1.6;
+}
+
+.modal-noticias__input {
+  font-size: var(--fs-7);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--cultured);
+  margin-bottom: 16px;
+}
+
+.modal-noticias__btn {
+  background: var(--eerie-blacK);
+  color: var(--white);
+  font-size: var(--fs-7);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+  margin: auto;
+  padding: 10px 15px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-timing);
+}
+
+.modal-noticias__btn:hover {
+  background: var(--salmon-pink);
+  box-shadow: 0 0 16px var(--salmon-pink);
+
+}
+
+/*================================================ NOTIFICAÇÃO POPUP ========================================================================= */
+.notificacao {
+  /* position fixed não não tem relaçao pai e filho */
+  position: fixed;
+  box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
+  bottom: 80px;
+  left: 20px;
+  background-color: var(--white);
+  max-width: 300px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-radius: var(--border-radius-md);
+  transform: translateX(calc(-100% - 40px));
+  /* o trasform traslate x pega o elemento pelos cantos
+    fazendo o elemento aparecer na tela mesmo com -100% 
+    para corrigir isso colocamos mais -40px para o elemento sumir totalmente 
+     */
+  transform: translateX(0);
+  transition: 0.5s ease-in-out;
+  z-index: 5;
+  /* animation: slideInOut 10s ease-in-out infinite;  */
+
+}
+
+@keyframes slideInOut {
+
+  0%,
+  45%,
+  100% {
+    transform: translateX(calc(-100% - 40px));
+    opacity: 0;
+    visibility: hidden;
+
+  }
+
+  50%,
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.notificacao.fechado {
+  display: none;
+}
+
+.notificacao__btn-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--sonic-silver);
+}
+
+.notificacao__btn-x ion-icon {
+  --ionicon-stroke-width: 50px
+}
+
+/*é o bloco que envolve a imagem*/
+.notificacao__banner {
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-sm);
+}
+
+.notificacao__banner img {
+  width: 100%;
+  height: 100%;
+  /*como colocarmos heigth 70px no pai a imagem vai pegar 
+    a altura do pai*/
+  object-fit: contain;
+  object-position: center;
+}
+
+/* bloco externo que elvolove os textos */
+.notificacao-detalhes {
+  width: calc(100% - 45px);
+  /*toma a largura do pai de 300px - 45px*/
+  padding-right: 10px;
+}
+
+.notificacao-detalhes__mensagem {
+  font-size: var(--fs-10);
+  color: var(--sonic-silver);
+  margin-bottom: 8px;
+}
+
+.notificacao-detalhes__titulo {
+  font-size: var(--fs-10);
+  font-weight: var(--weight-500);
+  color: var(--onix);
+}
+
+.notificacao__detalhes__tempo {
+  font-size: var(--fs-10);
+  color: var(--sonic-silver);
+
+}
+
+
+/*========================== HEADER SUPERIOR ======================================= */
+.header-topo,
+.header-moeda-idiomas,
+.desktop-navegacao-menu,
+.redes-sociais-container,
+.header-acao-usuario {
+  display: none;
+}
+
+.header-main {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cultured);
+}
+
+.header-logo {
+  margin-bottom: 20px;
+
+}
+
+.header-logo img {
+  margin: auto;
+  /* centraliza o elemento */
+}
+
+.header-busca-container {
+  /*USAMOS PARA MANIPULAR ELEMENTOS
+    COM O POSITION ABSOLUTE
+     */
+  position: relative;
+}
+
+.header-busca-container {
+  position: relative;
+}
+
+.header-busca-container .busca-campo {
+  font-size: var(--fs-7);
+  color: var(--onix);
+  padding: 10px 15px;
+  padding-right: 50px;
+  outline-color: var(--salmon-pink);
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+}
+
+.busca-campo::-webkit-search-cancel-button {
+  /*some o icone x da busca*/
+  display: none;
+}
+
+.header-busca-container .btn-busca {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2px;
+  color: var(--onix);
+  font-size: 18px;
+  padding: 8px 15px;
+  transition: color var(--transition-timing);
+}
+
+.header-busca-container .btn-busca:hover {
+  color: var(--salmon-pink);
+}
+
+/*--================== BARRA DE NAVEGAÇÃO MOBILE INFERIOR =================================*/
+.barra-navegacao-mobile-fixa {
+  background-color: var(--white);
+  position: fixed;
+  /* se eu não definir largura 
+    o elemento pai vai pegar a largura dos elementos
+    filhos
+     */
+  gap: 15px;
+  max-width: 500px;
+  width: 100%;
+
+  /* por padrao o conteudo 
+     define a largura do container 
+     e a altura tambem
+     */
+  bottom: 0;
+  display: flex;
+  height: 10vh;
+  box-shadow: 0 -1px 4px var(--salmon-pink);
+  z-index: 5;
+  /* display: none;   */
+}
+
+.barra-navegacao-mobile-fixa .btn-mobile {
+  font-size: 22px;
+  /* VAMOS USAR ABSOLUTE NO CONTADOR */
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.barra-navegacao-mobile-fixa .contador {
+  color: var(--white);
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 12px;
+  font-weight: var(--weight-500);
+  margin-left: 8px;
+  line-height: 1;
+  background-color: var(--salmon-pink);
+  border-radius: 20px;
+  padding: 2px 4px;
+}
+
+/* =============== BARRA DE NAVEGAÇÃO MOBILE LATERAL =================== */
+.barra-navegacao-mobile-lateral {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 320px;
+  background-color: white;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 0 0 20px hsla(0, 0%, 0%, 0.1);
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease;
+  z-index: 20;
+
+}
+
+.barra-navegacao-mobile-lateral.ativo {
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: .5s ease;
+}
+
+
+/* =========== MENU SUPERIOR ================== */
+.menu-superior {
+  position: relative;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--cultured);
+}
+
+.menu-superior__menu-title {
+  color: var(--salmon-pink);
+  font-size: var(--fs-4);
+  font-weight: var(--weight-600);
+
+}
+
+.menu-superior__btn-fechar-bloco {
+  font-size: 22px;
+  color: var(--eerie-blacK);
+
+}
+
+.menu-superior__btn-fechar-bloco ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+/* ===========  CAMISA ATE OFERTAS QUENTES ============= */
+
+.menu-mobile-lista-categorias {
+  margin-bottom: 30px;
+
+}
+
+/* BOTAO ACORDION */
+.menu-mobile-lista-categorias .categoria-menu .acordion-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  /* width: 100%;  */
+
+}
+
+.menu-mobile-lista-categorias .categoria-menu {
+  border-bottom: 1px solid var(--cultured);
+
+}
+
+.menu-mobile-lista-categorias .menu-titulo {
+  color: var(--onix);
+  font-size: var(--fs-6);
+  font-weight: var(--weight-500);
+  padding: 12px 0;
+}
+
+.acordion-menu>div {
+  font-size: 14px;
+}
+
+.acordion-menu ion-icon {
+  --ionicon-stroke-width: 90px;
+  color: var(--onix);
+
+}
+
+/* quando ele receber a classe ativo que é removido
+   o icone adicionar some
+ */
+.acordion-menu.activo .icone-adicionar,
+.acordion-menu .icone-remover {
+  display: none;
+}
+
+.acordion-menu.activo .icone-adicionar,
+.acordion-menu .icone-remover {
+  display: block;
+}
+
+/* seleciona o acordion */
+.categoria-menu .submenu-categoria-lista {
+  margin-left: 10px;
+
+}
+
+.submenu-categoria-lista .submenu-categoria {
+  padding: 6px 0;
+  font-size: var(--fs-6);
+  font-weight: var(--weight-300);
+  color: var(--sonic-silver);
+}
+
+.submenu-categoria-lista .submenu-categoria :hover {
+  color: var(--davis-gray);
+}
+
+.submenu-categoria-lista {
+  max-height: 0;
+  visibility: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.submenu-categoria-lista.ativo {
+  max-height: 148px;
+  visibility: visible;
+
+
+}
+
+.menu-inferior-fixo {}
+
+.menu-inferior-fixo .submenu-categoria-lista {
+  margin-bottom: 20px;
+}
+
+.menu-inferior-fixo .menu-categoria {
+  border-bottom: none;
+
+}
+
+.menu-inferior-fixo .menu-titulo {
+  font-size: var(--fs-6);
+  font-weight: var(--weight-500);
+  color: var(--eerie-blacK);
+  padding: 12px 0;
+}
+
+.acordion-menu.ativo .icone-voltar {
+  transform: rotate(-0.25turn);
+
+}
+
+.menu-inferior-fixo .submenu-categoria-lista {
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  padding: 0 15px;
+  margin-left: 0;
+  box-shadow: hsla(0, 0%, 0%, 0.05);
+}
+
+.menu-inferior-fixo .submenu-categoria:not(:last-child) {
+  border-bottom: 1px solid var(--cultured);
+}
+
+
+.menu-inferior-fixo .acordion-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+}
+
+/*==================== REDES SOCIAS ========================== */
+.redes-socias-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.redes-socias-container .social-link {
+  background: var(--cultured);
+  color: var(--eerie-blacK);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: var(--border-radius-md);
+}
+
+/* ===================== BANNER =====================================*/
+
+.banner {
+  margin: 30px 0;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: (--border-radius-md);
+  overflow: auto hidden;
+  scroll-snap-type: inline mandatory;
+  /* mandator
+    y a rolagem vai de um elemento ate o meio do outro elemento o efeto de rolagem e mais suave*/
+  /*o efeito de rolagem no proximity é mais rigido causa uma certa estranheza ao rolar*/
+
+  /*inline-eixo-x
+      block-eixo-y
+    */
+
+  /* overscroll-behavior: comportamento de limite
+    de rolagem*/
+
+  /* auto - o valor padrao quando atigir o limite de rolagem
+       o elemento pai escrola quando finalizar o elemento filho
+     contain : scroll não se propaga a elementos pais e impede o overscroll
+     */
+
+  overscroll-behavior-inline: contain;
+}
+
+/* BLOCO DOS CARDS */
+.slider-item {
+  position: relative;
+  min-width: 100%;
+  /*a scrolagem so funciona com min-width 100%*/
+  max-height: 450px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  scroll-snap-align: start;
+  /*estudar depois */
+
+}
+
+.slider-item .banner-img {
+  width: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: right;
+  height: 100%;
+}
+
+.banner-conteudo {
+  background: hsla(0, 0%, 100%, 0.8);
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  padding: 20px 25px;
+  border-radius: var(--border-radius-md);
+
+}
+
+.banner-subtitulo {
+  color: var(--salmon-pink);
+  font-size: var(--fs-7);
+  font-weight: var(--weight-500);
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+
+}
+
+.banner-titulo {
+  color: var(--eerie-blacK);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.banner-texto {
+  display: none;
+}
+
+.banner-btn {
+  background-color: var(--salmon-pink);
+  color: var(--white);
+  width: max-content;
+  font-size: var(--fs-11);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-timing);
+}
+
+.banner-btn:hover {
+  background-color: var(--eerie-blacK);
+}
+
+
+/*======================= CATEGORIAS ================================= */
+
+.categoria {
+  margin-bottom: 30px;
+}
+
+/* AQUI OS CARTOES IRAO ESCROLAR */
+.categoria-item-container {
+  display: flex;
+  align-items: center;
+  overflow: auto hidden;
+  /*efeito de rolagen no eixo-x um efeito mais suave*/
+  scroll-snap-type: inline mandatory;
+  /* ao atingir o limite de rolagem lateral o container pai
+    não ira escrolar */
+  overscroll-behavior-inline: contain;
+}
+
+.categoria-item {
+  /* para o efeito de scroll funcionar e ficar responsivo
+    colocamos a propiedade min-width
+     */
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+}
+
+.categoria-img-caixa {
+  background-color: var(--cultured);
+  border-radius: 1px solid hsl(0, 0%, 80%);
+  border-radius: var(--border-radius-md);
+  padding: 10px;
+
+}
+
+.categoria-conteudo-caixa {
+  width: 100%;
+}
+
+.categoria-conteudo-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.categoria-item-titulo {
+  color: var(--eerie-blacK);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+}
+
+.categoria-item-quantidade {
+  color: var(--sonic-silver);
+  font-size: var(--fs-11);
+}
+
+.categoria-btn {
+  color: var(--salmon-pink);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-500);
+  text-transform: capitalize;
+}
+
+/* ================= BARRA LATERAL ============================ */
+
+/* OCULTO */
+.barra-lateral--modificada {
+  background: var(--white);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  max-width: 320px;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  visibility: hidden;
+  transition: 0.5s ease;
+  z-index: 20;
+  box-shadow: 0 5px 5px var(--salmon-pink);
+  padding: 30px;
+
+  display: none;
+  /* remover depois*/
+}
+
+/* VISIVEL */
+.barra-lateral--modificada.ativo {
+  visibility: visible;
+  left: 0;
+}
+
+.barra-lateral-categoria {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--cultured);
+
+}
+
+.barra-lateral-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.barra-lateral-titulo {
+  color: var(--onix);
+  font-size: var(--fs-5);
+  text-transform: uppercase;
+  font-weight: var(--weight-600);
+}
+
+.barra-lateral-btn-fechar {
+  color: var(--eerie-blacK);
+  font-size: 22px;
+  font-weight: var(--weight-600);
+}
+
+.barra-lateral-btn-fechar ion-icon {
+  --ionicon-stroke-width: 50px;
+}
+
+.barra-lateral-acordion-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+}
+
+.menu-titulo-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-titulo {
+  font-size: var(--fs-5);
+  color: var(--sonic-silver);
+  font-weight: var(--weight-500);
+}
+
+.barra-lateral-acordion-menu ion-icon {
+  --ionicon-stroke-width: 70px;
+  color: var(--sonic-silver);
+  font-size: 14px;
+}
+
+.barra-lateral-submenu-categoria-lista {
+  border-top: 1px solid var(--cultured);
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+.barra-lateral-submenu-categoria-lista.ativo {
+  max-height: 122px;
+  overflow: none;
+  padding: 13px 0 8px;
+  visibility: visible;
+
+}
+
+.barra-lateral-submenu-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+}
+
+.barra-lateral-submenu-titulo:hover {
+  color: var(--eerie-blacK);
+}
+
+.barra-lateral--modificada .produto-nome {
+  text-transform: capitalize;
+}
+
+/* quando o acordion estiver com a classe ativo quando for clicado
+   o icone de adicionar ira sumir 
+
+   quando o acordion estiver normal o icone de remover sumira
+
+   // classe para icones que somem
+   acordion-btn.ativo btn__adicionar , 
+   acordion-btn btn__remover , {
+      display ; none
+   }
+
+   // classe para icones que aparecem
+   acordion-btn.ativo btn__remover ,
+   acordion-btn btn__adicionar {
+    display: block;
+   }
+
+*/
+
+/* chamada pelo javascript */
+.barra-lateral-acordion-menu.ativo .icone-adicionar,
+.barra-lateral-acordion-menu .icone-remover {
+  display: none;
+}
+
+/* chamada pelo javascript */
+.barra-lateral-acordion-menu .icone-adicionar,
+.barra-lateral-acordion-menu.ativo .icone-remover {
+  display: block
+}
+
+/* PRODUTOS MAIS VENDIDOS */
+.monstuario-produtos .mostruario-texto {
+  font-size: var(--fs-5);
+  font-weight: var(--weight-600);
+  color: var(--onix);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 15px;
+
+}
+
+.barra-lateral--modificada .monstruario {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.barra-lateral--modificada .monstruario:not(:last-child) {
+
+  margin-bottom: 15px;
+}
+
+.barra-lateral--modificada .mostruario-imagem-caixa {
+  display: block;
+  border: 1px solid var(--cultured);
+  border-radius: 10px;
+}
+
+.barra-lateral--modificada .monstruario-conteudo {
+  width: calc(100% - 90px);
+
+}
+
+
+.barra-lateral--modificada .mostruario-titulo {
+  font-size: var(--fs-7);
+  color: var(--onix);
+  font-weight: var(--weight-400);
+  text-transform: capitalize;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: 0.5px;
+}
+
+.barra-lateral--modificada .monstruario-avaliacao {
+  display: flex;
+  align-items: center;
+  color: var(--sansy-brown);
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.barra-lateral--modificada .caixa-preco {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.barra-lateral--modificada .caixa-preco del {
+  color: var(--sonic-silver);
+  font-size: 13px;
+}
+
+.barra-lateral--modificada .caixa-preco .preco {
+  font-size: var(--fs-7);
+  font-weight: var(--weight-600);
+  color: var(--davis-gray);
+}
+
+
+/*================================== BLOCO MONSTRUARIO ===========================================*/
+.prudutos-minimos {
+  margin-bottom: 30px;
+}
+
+.prudutos-minimos .produtos-colecao {
+  margin-bottom: 10px;
+}
+
+.prudutos-minimos .produtos-colecao-embrulho {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
+
+.prudutos-minimos .produtos-colecao-container {
+  min-width: 100%;
+  padding: 0 5px;
+  scroll-snap-align: start;
+}
+
+.prudutos-minimos .colecao {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--cultured);
+  padding: 15px;
+  border-radius: var(--border-radius-md);
+}
+
+.prudutos-minimos .colecao:not(:last-child) {
+  margin-bottom: 15px;
+
+}
+
+
+.prudutos-minimos .colecao-conteudo {
+  width: calc(100% - 85px);
+}
+
+.prudutos-minimos .colecao-titulo {
+  color: var(--eerie-blacK);
+  font-size: var(--fs-7);
+  font-weight: var(--weight-600);
+  text-transform: capitalize;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+.prudutos-minimos .colecao-categoria {
+  width: max-content;
+  color: var(--davis-gray);
+  font-size: var(--fs-8);
+  text-transform: capitalize;
+  margin-bottom: 3px;
+
+}
+
+.prudutos-minimos .colecao-categoria:hover {
+  color: var(--salmon-pink);
+}
+
+.prudutos-minimos .caixa-preco {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prudutos-minimos .preco {
+  font-size: var(--fs-7);
+  font-weight: var(--weight-700);
+  color: var(--salmon-pink)
+}
+
+/*================================== PRODUTOS DESTACADOS  ===========================================*/
+
+.produtos-destacados {
+  margin-bottom: 30px;
+  transition: 2s ease;
+
+}
+
+.produtos-destacados-embrulho {
+  display: flex;
+  gap: 20px;
+  overflow: auto;
+  /* overscroll-behavior: contain;    */
+  scroll-snap-type: inline mandatory;
+  align-items: center;
+}
+
+.produtos-destacados-container {
+  min-width: 100%;
+  /*se houver algum erro força os elementos a ficarem com todo o espaço disponivel*/
+  padding: 30px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  scroll-snap-align: start;
+}
+
+.produtos-destacados .produtos-destacados__img {
+  width: 100%;
+}
+
+.produtos-destacados .produtos-destacados__conteudo {
+  margin-top: 30px;
+}
+
+.produtos-destacados .prudutos-destacados__avaliacao {
+  color: var(--sansy-brown);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.produtos-destacados .produtos-destacados-titulo {
+  color: var(--eerie-blacK);
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  font-size: 1.2rem;
+  text-overflow: ellipsis;
+
+}
+
+.produtos-destacados .produtos-destacados__desconto-texto {
+  margin-bottom: 10px;
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+  font-weight: var(--weight-300)
+}
+
+.produtos-destacados .caixa-preco {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: var(--fs-3);
+}
+
+
+.produtos-destacados .caixa-preco .preco {
+  color: var(--salmon-pink);
+  font-weight: var(--weight-700);
+}
+
+.caixa-preco del {
+  color: var(--sonic-silver);
+  font-weight: var(--weight-300);
+}
+
+.produtos-destacados .botao-carrinho {
+  padding: 8px 15px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 15px;
+  font-weight: var(--weight-700);
+  background-image: linear-gradient(to right, blueviolet, salmon);
+}
+
+.produtos-destacados .botao-carrinho:hover {
+  transition: 1s ease;
+  background: blueviolet;
+}
+
+.produtos-destacados .produtos-destacados__status {
+  margin-bottom: 15px;
+}
+
+
+.produtos-destacados .embrulho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--eerie-blacK);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-400);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.produtos-destacados .produtos-destacados__barra-status {
+  height: 10px;
+  background-color: var(--cultured);
+  position: relative;
+  border-radius: 5px;
+
+}
+
+.produtos-destacados .produtos-destacados__barra-status::before {
+  content: '';
+  height: 10px;
+  background-image: linear-gradient(to right, blueviolet, salmon);
+  position: absolute;
+  width: 40%;
+  border-radius: 5px;
+}
+
+
+.produtos-destacados .contagem-regressiva__desconto {
+  margin-bottom: 10px;
+  font-size: var(--fs-9);
+  color: var(--eerie-blacK);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+
+}
+
+.produtos-destacados .contador {
+  display: flex;
+  gap: 5px;
+
+}
+
+.produtos-destacados .contador-conteudo {
+  padding: 5px;
+  background-color: var(--cultured);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+
+.produtos-destacados .contador-conteudo .numero-exibicao {
+  color: var(--eerie-blacK);
+  font-size: var(--fs-5);
+  font-weight: var(--weight-500);
+  min-width: 40px;
+
+}
+
+.produtos-destacados .contador-conteudo .exibicao-texto {
+  color: var(--davis-gray);
+  font-size: var(--fs-11);
+}
+
+/* PRODUTOS PRINCIPAIS */
+
+.produtos-principais {
+  margin-bottom: 30px;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+
+}
+
+.produtos-grid .monstruario {
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: var(--transition-timing);
+
+}
+
+.produtos-grid .monstruario:hover {
+  box-shadow: hsla(0, 0%, 0%, 0.1);
+}
+
+.produtos-grid .monstruario-banner {
+  position: relative;
+
+}
+
+.produtos-grid .monstruario-banner-caixa {
+  position: relative;
+}
+
+/* SELECIONA AS DUAS IMAGENS */
+.produtos-grid .produtos-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-timing);
+}
+
+.produtos-grid .produtos-img.padrao {
+  position: relative;
+  z-index: 1;
+}
+
+.produtos-grid .produtos-img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.produtos-grid .monstruario:hover .produtos-img.hover {
+  opacity: 1;
+}
+
+.produtos-grid .monstruario:hover .produtos-img.padrao {
+  opacity: 0;
+}
+
+.produtos-grid .produtos-img:hover {
+  transform: scale(1.1);
+}
+
+
+.produtos-grid .artigo-vitrine {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 3;
+  background: var(--ocean-green);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-500);
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  border-radius: var(--border-radius-sm);
+}
+
+.produtos-grid .monstruario-acao {
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+  right: 10px;
+  font-size: 20px;
+  transform: translateX(50px);
+
+}
+
+
+.produtos-grid .monstruario:hover .monstruario-acao {
+  transform: translateX(0);
+  transition: 1s ease;
+}
+
+.produtos-grid .btn-acao {
+  background-color: var(--white);
+  color: var(--sonic-silver);
+  margin-bottom: 5px;
+  border: 1px solid var(--cultured);
+  padding: 5px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-timing);
+
+}
+
+.produtos-grid .btn-acao:hover {
+  background-color: var(--eerie-blacK);
+  color: #fff;
+}
+
+.produtos-grid .monstruario-conteudo {
+  padding: 15px 20px 0;
+
+}
+
+
+.produtos-grid .monstruario-categoria {
+  color: var(--salmon-pink);
+  font-size: var(--fs-9);
+  font-weight: var(--weight-500);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+}
+
+.produtos-grid .monstruario-titulo {
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-300);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  transition: var(--transition-timing);
+
+}
+
+.produtos-grid .monstruario-titulo:hover {
+  color: var(--sansy-brown);
+}
+
+.produtos-grid .monstruario-avaiacao {
+  display: flex;
+  color: var(--sansy-brown);
+  margin-bottom: 10px;
+}
+
+.produtos-grid .caixa-preco {
+  display: flex;
+  gap: 10px;
+  font-size: var(--fs-7);
+  color: var(--eerie-blacK);
+  margin-bottom: 10px;
+
+}
+
+.produtos-grid.preco {
+  font-weight: var(--weight-700);
+}
+
+.produtos-grid del {
+  color: var(--sonic-silver);
+
+}
+
+.produtos-grid .artigo-vitrine.inclinada {
+  transform: rotate(-45deg);
+  left: -29px;
+  top: 8px;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 5px 40px;
+}
+
+.produtos-grid:hover .artigo-vitrine.preto {
+  background-color: var(--eerie-blacK);
+
+}
+
+
+.produtos-grid:hover .artigo-vitrine.rosa {
+  background-color: salmon;
+}
+
+/* =================== BLOCO TESTEMUNHAS =========================== */
+
+.testemunhas-caixa {
+  margin-bottom: 50px;
+}
+
+.testemuhas-cartao {
+  padding: 30px 20px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.testemunhas-banner {
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.testemunhas-nome {
+  font-weight: var(--weight-700);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: var(--sonic-silver);
+}
+
+
+.testemunhas-titulo {
+  margin-bottom: 15px;
+  font-size: var(--fs-7);
+  color: var(--onix);
+
+}
+
+.cotacao {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.testemunhas-descricao {
+  max-width: 70%;
+  margin: auto;
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+}
+
+/* ================= CHAMADA AÇÃO ==================== */
+
+.cta-container {
+  position: relative;
+  aspect-ratio: 5/ 6;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  /* PARA AFASTAR A BARRA LATERAL */
+  margin-bottom: 25px;
+}
+
+.cta-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.cta-conteudo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  background: hsla(0, 0%, 100%, 0.7);
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: var(--border-radius-sm);
+}
+
+.cta-conteudo .disconto {
+  background-color: var(--eerie-blacK);
+  color: #fff;
+  width: max-content;
+  margin: auto;
+  font-size: var(--fs-11);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+  padding: 0 5px;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 5px;
+
+}
+
+.cta-conteudo .cta-titulo {
+  margin-bottom: 5px;
+  color: var(--onix);
+  font-size: var(--fs-5);
+  text-transform: capitalize;
+}
+
+.cta-conteudo .cta-texto {
+  margin-bottom: 5px;
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+
+}
+
+.cta-conteudo .cta-btn {
+  font-size: var(--fs-9);
+  margin: auto;
+  text-transform: uppercase;
+  color: var(--sonic-silver);
+  font-weight: var(--weight-700);
+}
+
+/* =============== SERVIÇO ================== */
+
+.servico-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 15px;
+  border: 1px solid var(--cultured);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 20px;
+}
+
+.servico-item {
+  min-width: 190px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}
+
+/* caixa do icone */
+.servico-icone {
+  font-size: 35px;
+  color: var(--salmon-pink);
+  transition: var(--transition-timing);
+}
+
+.servico-icone ion-icon {
+  --ionicon-stroke-width: 25px;
+}
+
+.servico-item:hover .servico-icone {
+  color: var(--eerie-blacK);
+}
+
+.servico-titulo {
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+  font-weight: var(--weight-600);
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.servico-desconto {
+  color: var(--sonic-silver);
+  font-size: var(--fs-9);
+}
+
+/* ============= BLOG ==================== */
+.blog {
+  margin-bottom: 30px;
+}
+
+.blog-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  /*estouro do scroll*/
+  scroll-snap-type: inline mandatory;
+  /* tipo do encaixe scroll*/
+
+}
+
+.blog-card {
+  min-width: 100%;
+  scroll-snap-align: center;
+  /* no elemento filho*/
+}
+
+.blog-banner {
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 20px;
+}
+
+.blog-categoria {
+  width: max-content;
+  color: var(--salmon-pink);
+  font-size: var(--fs-8);
+}
+
+.blog-titulo {
+  margin-bottom: 5px;
+  color: var(--eerie-blacK);
+  font-weight: var(--weight-600);
+  line-height: 1.4;
+  transition: var(--transition-timing);
+}
+
+.blog-titulo:hover {
+  color: var(--salmon-pink);
+}
+
+.blog-meta {
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+}
+
+.blog-meta cite {
+  font-style: normal;
+  color: var(--davis-gray);
+}
+
+/* =============== RODAPE ========================== */
+
+footer {
+  background-color: var(--eerie-blacK);
+  padding: 30px 0;
+  /* color: #fff;  */
+}
+
+.rodape-categoria {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--onix);
+}
+
+.rodape-categoria-titulo {
+  color: var(--salmon-pink);
+  font-size: var(--fs-6);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.rodape-categoria-caixa {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 3px;
+  column-gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+
+}
+
+.categoria-box-titulo {
+  color: var(--spanish-gray);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-600);
+  text-transform: uppercase;
+}
+
+.rodape-categoria-link {
+  position: relative;
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+  text-transform: capitalize;
+  transition: var(--transition-timing);
+}
+
+.rodape-categoria-link:hover {
+  color: var(--spanish-gray);
+}
+
+.rodape-categoria-link:not(:last-child)::after {
+  position: absolute;
+  content: '';
+  top: 3px;
+  right: -10px;
+  background-color: var(--sonic-silver);
+  height: 15px;
+  width: 1px;
+}
+
+/* rodape nav */
+.rodape-nav {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--onix);
+}
+
+.rodape-lista-navegacao:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.nav-titulo {
+  position: relative;
+  color: white;
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+.nav-titulo::before {
+  position: absolute;
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: var(--salmon-pink);
+  left: 0;
+  bottom: 0;
+}
+
+.rodape-nav-item {
+  padding: 3px 0;
+}
+
+.rodape-nav-link, .rodape-nav-item .content {
+  width: max-content;
+  color: var(--sonic-silver);
+  font-size: var(--fs-7);
+  text-transform: capitalize;
+  transition: var(--transition-timing);
+}
+
+.rodape-nav-link:hover {
+  color: var(--salmon-pink);
+}
+
+.rodape-nav-item.flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rodape-nav-item .content {
+  font-style: normal;
+  margin-bottom: 5px;
+}
+
+.rodape-nav-item .caixa-icone {
+  color: var(--sonic-silver);
+  font-size: 20px;
+}
+
+.rodape-nav-item .caixa-icone ion-icon {
+  --ionicon-stroke-width: 30px
+}
+
+.rodape-nav-item .redes-sociais {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.rodape-nav-item .redes-sociais .rodape-nav-link {
+  font-size: 20px;
+}
+
+
+.rodape-inferior {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.rodape-inferior .pagamento-img {
+  margin: auto;
+  width: 100%;
+  max-width: 335px;
+  margin-bottom: 15px;
+
+}
+
+.rodape-inferior .copyrigth {
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+  font-weight: var(--weight-500);
+  text-transform: capitalize;
+  letter-spacing: 1.2px;
+}
+
+.rodape-inferior .copyrigth a {
+  display: inline;
+  color: inherit;
+}
+
+
+/* RESPONSIVIDADE PARA TELAS ACIMA DE 480PX */
+@media (min-width:480px) {
+
+  /* PROPIEDADES CUSTOMIZADAS */
+  :root {
+    /* TIPOGRAFIA */
+    --fs-1: 1.875rem;
+  }
+
+  /* ===================== CABEÇALHO SUPERIOR ================ */
+  .header-topo, .redes-sociais-container, .header-moeda-idiomas {
+    display: block;
+  }
+
+  .header-topo {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cultured);
+  }
+
+  .redes-sociais-container, .header-acao-usuario {
+    display: none;
+  }
+
+  .header-alerta-noticias {
+    color: var(--sonic-silver);
+    font-size: var(--fs-9);
+    text-transform: uppercase;
+  }
+
+  .header-alerta-noticias b {
+    font-weight: var(--weight-500);
+  }
+
+  .header-main {
+    padding: 25px 0;
+  }
+
+  /* ========== BARRA NAVEGAÇÃO INFERIOR ================ */
+  .barra-navegacao-mobile-fixa {
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+  }
+
+  /* ========== BANNER CHAMATIVO ================ */
+
+  .slider-item {
+    aspect-ratio: 5 / 3;
+  }
+
+  .banner-conteudo {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    max-width: 320px;
+  }
+
+  .banner-subtitulo {
+    font-size: 1rem;
+  }
+
+  .banner-texto {
+    display: block;
+    color: var(--sonic-silver);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-500);
+    margin-bottom: 10px;
+  }
+
+  .banner-texto b {
+    font-size: var(--fs-2);
+  }
+
+  .banner-btn {
+    padding: 7px 20px;
+
+  }
+
+  /* ============= NOVOS PRODUTOS ================ */
+
+  .produtos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  /* ====================== CHAMADA PARA AÇÃO ================ */
+  .cta-conteudo {
+    padding: 40px;
+  }
+
+  .cta-container .disconto {
+    --fs-11: 0.875rem;
+    padding: 5px 10px;
+  }
+
+  .cta-container .cta-titulo {
+    --fs-5: 1.5rem
+  }
+
+  .cta-container .cta-texto {
+    --fs-7: 1rem;
+  }
+
+  .cta-container .cta-btn {
+    --fs-9: 1rem
+  }
+    /* ====================== RODAPE ================ */
+    .copyrigth {
+      --fs-8:0.875rem
+    }
+  
+}
+
+/* ============== PARA TELAS ACIMA DE 570PX ======================= */
+@media (min-width:570px) {
+  /* ----------------- CABEÇALHO ------------------------- */
+  .header-topo .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-main .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-logo {
+    margin-bottom: 0;
+
+  }
+
+
+.header-moeda-idiomas select {
+  border: none;
+  min-width: 80px; /*fixa sempre uma largura de 80px*/
+  padding: 5px 0;
+  font: inherit;
+  color: var(--sonic-silver);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  cursor:pointer;
+  transition: var(--transition-timing);
+
+}
+
+.header-moeda-idiomas:hover {
+  color: var(--eerie-blacK);
+
+}
+
+  .header-acao-usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    display: none;
+
+  }
+  .header-busca-container {
+    min-width:300px;
+  }  
+
+
+}
+
+
+/* large = 18px
+   larger = 19.2px
+   medium = 16px
+   small = 13px
+   smaller  = 13.333
+   x-large = 24px
+   x-small = 10px
+   xx-large  = 32px
+   xx-small = 9px
+   xxx-large = 48px;
+
+
+   xxx-large;
+   xx-large
+   x-large
+   larger
+   large
+   medium
+   small
+   x-small
+   xx-small
+
+   PROXIMO PROJETO PARA DESENVOLVER QUE GOSTEI https://www.youtube.com/watch?v=ENyk_W-Eleo
+
+
+ */

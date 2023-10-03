@@ -1,0 +1,36 @@
+/* Tela configurada em 1260px com 75% de visualização    */
+
+body {
+
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f1f1;
+}
+
+body::-webkit-scrollbar {
+  transition: 2s ease;
+  width: 10px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: whitesmoke;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --cor-vermelha: #f80032;
+}
+
+/* ======== ELEMENTOS REUTILIZAVEIS ========*/
+.box {
+  padding: 0 30px;
+
+}

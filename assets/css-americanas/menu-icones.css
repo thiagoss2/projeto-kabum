@@ -1,0 +1,17 @@
+/* ========================= MENU ICONES ==========================  */
+.menu-icones {
+  margin-bottom: 20px;
+
+}
+
+.menu-icones-colecao {
+  display: flex;
+  gap: 35px;
+  overflow-x: scroll;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.menu-icones-colecao::-webkit-scrollbar {
+  display: none;
+}

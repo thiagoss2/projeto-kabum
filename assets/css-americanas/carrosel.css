@@ -1,0 +1,13 @@
+/* ========================= CARROSEL ==========================  */
+.carrosel {
+  transition: 2s ease;
+}
+
+.carrosel {
+  margin-bottom: 20px;
+}
+
+.carrosel img {
+  height: 250px;
+  object-fit: cover;
+}

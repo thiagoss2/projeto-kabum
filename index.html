@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ICONE DO SITE PARTE SUPERIOR -->
+  <link rel="icon" href="/assets/images//logo/favicon.ico">
+  <!-- ARQUIVO DE ESTILO DO SITE -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,
+100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- PROXIMO SITE PARA CONSTRUIR JA
+        https://www.youtube.com/watch?v=NRpou6F4XlI
+     -->
+
+  <title>Anon Ecomerce</title>
+</head>
+
+<body>
+  <header>
+    <!--========================= OVERLAY ESCURECE A TELA AO CLICAR NO MODAL ================================================ -->
+    <div class="tela-sobreposta overlay" js-tela-sobreposta>
+
+    </div>
+    <!--================================================ NEWSLATTER ========================================================================= -->
+    <!-- PARTE ESCURA DA TELA -->
+    <div class="modal fechado " js-tela-escura>
+
+      <div class="modal-close-overlay modal-fechado " js-modal-fechado></div>
+      <!-- JANELA BRANCA COM INFORMAÇOES -->
+      <!-- MODAL CONTEUDO TEM A LARGURA FIXA 350PX -->
+      <div class=" modal-conteudo modal-content">
+        <button class="modal-close-btn  modal__btn-x" js-modal-conteudo-btn-x>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <div class="newsletter-img modal__img-container">
+          <img src="/assets/images/newsletter.png" alt="Se Inscreva na nossa newsletter" width="400" height="400">
+          <!-- FIM DA CAIXA IMG -->
+        </div>
+        <div class="newsletter modal-noticias">
+          <form action="">
+            <div class="newsletter-header  modal-noticias__cabecalho">
+              <h3 class="newsletter-title modal-noticias__titulo">Se inscreva na nossa newsletter.</h3>
+              <p class="newsletter-desc modal-noticias__descricao">Assine o Anon para obter os produtos
+                mais
+                recentes e atualizações e
+                descontos</p>
+            </div>
+            <input type="email" name="email" class="email-field  modal-noticias__input" placeholder="Seu Email"
+              required>
+            <button type="submit" class="btn-newsletter modal-noticias__btn" id="botao">Se inscreva</button>
+          </form>
+        </div>
+      </div>
+      <!-- FIM DO MODAL -->
+    </div>
+    <!--================================================ NOTIFICAÇAO FLUTUANTES ========================================================================= -->
+    <div class="notificacao fechado " js-notificacoes>
+      <button class="notificacao__btn-x" js-notificacao-btn-x>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <!-- IMG BANER CONTAINER -->
+      <div class="notificacao__banner">
+        <img width="80" height="70" src="/assets/images/products/jewellery-1.jpg" alt="Brincos de Ouro">
+      </div>
+      <!-- NOTIFICAÇOES TEXTO -->
+      <div class="notificacao-detalhes">
+        <p class="notificacao-detalhes__mensagem">
+          Alguem novo acabou de comprar
+        </p>
+        <p class="notificacao-detalhes__titulo">
+          Brincos de ouro rosa
+        </p>
+        <p class=" notificacao__detalhes__tempo ">
+          <time datetime="PT2M">ha 2 minutos </time>atras
+        </p>
+      </div>
+    </div>
+    <!--============================================ HEADER SUPERIOR ==================================================-->
+    <div class="header-topo">
+      <div class="container">
+        <!--=============================== REDES SOCIAIS ================================ -->
+        <ul class="redes-sociais-container">
+          <li><a href="" class="redes-sociais-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a></li>
+          <li><a href="" class="redes-sociais-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a></li>
+          <li><a href="" class="redes-sociais-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a></li>
+          <li><a href="" class="redes-sociais-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a></li>
+        </ul>
+        <!--================================= MENSAGEM ========================== -->
+        <div class="header-alerta-noticias">
+          <p>
+            <strong>Frete Grátis</strong> <b>esta semana para pedidos acima de R$55</b>
+          </p>
+        </div>
+        <!--============================ MOEDA E IDIOMA  =================================== -->
+        <div class="header-moeda-idiomas">
+          <select name="moeda" id="">
+            <option value="BRL">Real &reals;</option>
+            <option value="EUR">Euro &euro;;</option>
+          </select>
+          <select name="language" id="">
+            <option value="en-US">English</option>
+            <option value="en-ES">Espa&ntilde;ol</option>
+            <option value="fr">Fan&ccedil;ais</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!--============================================ HEADER MEIO BUSCA ===========================================-->
+    <div class="header-main">
+      <div class="container">
+        <!--=========================== ANON LOGO =================================================== -->
+        <a href="#" class="header-logo">
+          <img src="/assets/images/logo/logo.svg" alt="Logo da Anon" width="120" height="36">
+        </a>
+        <!--=========================== HEADER BUSCA ================================================== -->
+        <div class="header-busca-container ">
+          <input type="search" name="search" class="busca-campo" placeholder="Entre com o nome do produto">
+          <button class="btn-busca">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+        </div>
+        <!--=========================== HEADER AÇÃO USUARIO ================================================== -->
+        <div class="header-acao-usuario">
+          <!-- icone boneco -->
+          <button class="usuario-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+          <!-- icone coração -->
+          <button class="usuario-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="contador">0</span>
+          </button>
+          <!-- bug aqui -->
+          <button class="usuario-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="contador">0</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+    <!--============================================ BARRA DE NAVEGAÇÃO DESKTOP =================================-->
+    <nav class="desktop-navegacao-menu">
+      <div class="container">
+
+        <ul class="desktop-menu-categoria-lista">
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Homens</li>
+          <!--=========================================== PAINEL GIGANTE =======================================================-->
+          <li class="menu-categoria"><a href="" class="menu-titulo">Categorias</a>
+            <!--======================================== DROPDOWN GIDANTE ==========================================-->
+
+            <div class="dropdown-painel ">
+              <!-- COLUNA 1 -->
+              <ul class="dropdown-painel-lista">
+                <li class="menu-titulo"><a href="">Eletronicos</a></li>
+                <li class="painel-lista-item"><a href="">Desktop</a></li>
+                <li class="painel-lista-item"><a href="">Laptop</a></li>
+                <li class="painel-lista-item"><a href="">Camera</a></li>
+                <li class="painel-lista-item"><a href="">Tablet</a></li>
+                <li class="painel-lista-item"><a href="">Fone de Ouvido</a></li>
+                <li class="painel-lista-item"><a href=""><img src="assets/images/electronics-banner-1.jpg"
+                      alt="Coleção de Fones de ouvido" wwidth="150" height="119"></a></li>
+              </ul>
+              <!-- COLUNA 2 -->
+              <ul class="dropdown-painel-lista">
+                <li class="menu-titulo"><a href="">Homens</a></li>
+                <li class="painel-lista-item"><a href="">Formal</a></li>
+                <li class="painel-lista-item"><a href="">Casual</a></li>
+                <li class="painel-lista-item"><a href="">Sport</a></li>
+                <li class="painel-lista-item"><a href="">Jaquetas</a></li>
+                <li class="painel-lista-item"><a href="">Oculos Escuro</a></li>
+                <li class="painel-lista-item"><a href=""><img src="assets/images/mens-banner.jpg"
+                      alt="Coleção de Fones de ouvido" wwidth="150" height="119"></a></li>
+              </ul>
+              <!-- COLUNA 3 -->
+              <ul class="dropdown-painel-lista">
+                <li class="menu-titulo"><a href="">Mulheres</a></li>
+                <li class="painel-lista-item"><a href="">Formal</a></li>
+                <li class="painel-lista-item"><a href="">Casual</a></li>
+                <li class="painel-lista-item"><a href="">Perfumes</a></li>
+                <li class="painel-lista-item"><a href="">Cosmeticos</a></li>
+                <li class="painel-lista-item"><a href="">Bolsas</a></li>
+                <li class="painel-lista-item"><a href=""><img src="assets/images/womens-banner.jpg"
+                      alt="Coleção de Fones de ouvido" wwidth="150" height="119"></a></li>
+              </ul>
+              <!-- COLUNA 4 -->
+              <ul class="dropdown-painel-lista">
+                <li class="menu-titulo"><a href="">Eletronicos</a></li>
+                <li class="painel-lista-item"><a href="">Smart Watch</a></li>
+                <li class="painel-lista-item"><a href="">Smart Tv</a></li>
+                <li class="painel-lista-item"><a href="">Teclados</a></li>
+                <li class="painel-lista-item"><a href="">Mouse</a></li>
+                <li class="painel-lista-item"><a href="">Microfones</a></li>
+                <li class="painel-lista-item"><a href=""><img src="assets/images/electronics-banner-2.jpg"
+                      alt="Coleção de Fones de ouvido" wwidth="150" height="119"></a></li>
+              </ul>
+
+            </div>
+          </li>
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Homens
+            <!--======================== DROPDOWN ====================================-->
+            <ul class="dropdown-lista">
+              <li class="dropdown-item"><a href="" class="">Camisa</a></li>
+              <li class="dropdown-item"><a href="" class="">Shorts & Jeans</a></li>
+              <li class="dropdown-item"><a href="" class="">Calçados Confortaveis</a></li>
+              <li class="dropdown-item"><a href="" class="">Carteiras</a></li>
+
+            </ul>
+          </li>
+
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Mulheres
+            <!--======================== DROPDOWN ====================================-->
+            <ul class="dropdown-lista">
+              <li class="dropdown-item"><a href="" class="">Vestidos & Saias</a></li>
+              <li class="dropdown-item"><a href="" class="">Brincos</a></li>
+              <li class="dropdown-item"><a href="" class="">Colares</a></li>
+              <li class="dropdown-item"><a href="" class="">Kit de Marcação</a></li>
+            </ul>
+          </li>
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Perfume
+            <!--======================== DROPDOWN ====================================-->
+            <ul class="dropdown-lista">
+              <li class="dropdown-item"><a href="" class="">Roupas Perfumadas</a></li>
+              <li class="dropdown-item"><a href="" class="">Desodorant</a></li>
+              <li class="dropdown-item"><a href="" class="">Jardim Perfumado</a></li>
+              <li class="dropdown-item"><a href="" class="">Purificador de Ar</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Joias
+            <!--======================== DROPDOWN ====================================-->
+            <ul class="dropdown-lista">
+              <li class="dropdown-item"><a href="" class="">Brincos</a></li>
+              <li class="dropdown-item"><a href="" class="">Aneis de Casal</a></li>
+              <li class="dropdown-item"><a href="" class="">Colares</a></li>
+              <li class="dropdown-item"><a href="" class="">Braceletes</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Blog</li>
+          <li class="menu-categoria"><a href="" class="menu-titulo"></a>Ofertas Quentes</li>
+
+        </ul>
+
+      </div>
+    </nav>
+    <!--========================== BARRA DE NAVEGAÇÃO MOBILE LATERAL  =========================================-->
+    <nav class="barra-navegacao-mobile-lateral  barra-rolagem   " js-navegacao-mobile-lateral>
+      <!-- ====================================== MENU SUPERIOR ======================================= -->
+      <div class="menu-superior">
+        <h2 class=" menu-superior__menu-title   menu-title">Menu</h2>
+        <!-- ICONE X -->
+        <button class="menu-superior__btn-fechar-bloco btn-fechar" js-mobile-btn-fechar>
+          <ion-icon name="close-outline" class="menu-superior__btn-icone-x"></ion-icon>
+        </button>
+      </div>
+      <!-- ====================================== LISTA DE CATEGORIAS ======================================= -->
+      <ul class="menu-mobile-lista-categorias">
+        <li class="categoria-menu"><a class="menu-titulo" href="">Home</a></li>
+        <li class="categoria-menu">
+          <!-- ACORDION BTN-->
+          <button class="acordion-menu " js-acordion-btn>
+            <p class="menu-titulo">Homens
+            </p>
+            <div>
+              <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+              <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+            </div>
+          </button>
+          <!-- ============================== ACORDION ==================================== -->
+          <ul class="submenu-categoria-lista" js-acordion>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo">Camisa</a></li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Shorts & Jeans</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Calçados Seguros</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Carteira</li>
+          </ul>
+        </li>
+        <li class="categoria-menu">
+          <!-- ACORDION BTN -->
+          <button class="acordion-menu" js-acordion-btn>
+            <p class="menu-titulo">Mulheres
+            </p>
+            <div>
+              <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+              <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+            </div>
+          </button>
+          <!-- ============================== ACORDION ==================================== -->
+          <ul class="submenu-categoria-lista" js-acordion>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo">Vestidos</a></li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Brincos</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Colares</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Carteira</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Kit de Perfumes</li>
+          </ul>
+        </li>
+        <li class="categoria-menu">
+          <!-- ACORDION BTN -->
+          <button class="acordion-menu" js-acordion-btn>
+            <p class="menu-titulo">Perfume
+            </p>
+            <div>
+              <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+              <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+            </div>
+          </button>
+          <!-- ============================== ACORDION ==================================== -->
+          <ul class="submenu-categoria-lista " js-acordion>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo">Roupas Perfumadas</a></li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Desodorant</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Flores Frescas</li>
+            <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Purificador de Ar</li>
+          </ul>
+        </li>
+        <li class="categoria-menu"><a class="menu-titulo" href="">Blog</a></li>
+        <li class="categoria-menu"><a class="menu-titulo" href="">Ofertas Quentes</a></li>
+      </ul>
+      <!-- ============================== MOEDAS E LINGUAGEM' ==================================== -->
+      <div class="menu-inferior-fixo">
+        <ul class="menu-categoria-lista">
+          <li class="menu-categoria">
+            <button class="acordion-menu " js-acordion-btn>
+              <p class="menu-titulo">Linguagem
+              </p>
+              <ion-icon name="caret-back-outline" class="icone-voltar"></ion-icon>
+            </button>
+            <!-- ============================== ACORDION ==================================== -->
+            <ul class="submenu-categoria-lista  " js-acordion>
+              <li class="submenu-categoria"><a href="" class="submenu-titulo">English</a></li>
+              <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Espa&ntilde;</li>
+              <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>Fren&ccedil;</li>
+            </ul>
+          </li>
+          <li class="menu-categoria">
+            <button class="acordion-menu" js-acordion-btn>
+              <p class="menu-titulo">Moeda
+              </p>
+
+              <ion-icon name="caret-back-outline" class="icone-voltar"></ion-icon>
+            </button>
+
+            <!-- ============================== ACORDION ==================================== -->
+            <ul class="submenu-categoria-lista" js-acordion>
+              <li class="submenu-categoria"><a href="" class="submenu-titulo">USD &dollar;</a></li>
+              <li class="submenu-categoria"><a href="" class="submenu-titulo"></a>EUR &euro;</li>
+            </ul>
+          </li>
+        </ul>
+        <!-- ============================== ICONES REDES SOCIAIS ============================= -->
+        <ul class="redes-socias-container">
+          <!-- =================== ICONE FACEBOOK ======================= -->
+          <li><a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <!-- =================== ICONE TWITTER ======================= -->
+          <li><a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <!-- =================== ICONE INSTAGRAM ======================= -->
+          <li><a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <!-- =================== ICONE LINKEDIN ======================= -->
+          <li><a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--==================================== BARRA DE NAVEGAÇÃO MOBILE INFERIOR =================================-->
+    <div class="barra-navegacao-mobile-fixa  ">
+      <button class="btn-mobile" js-btn-mobile-hamburger>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <button class="btn-mobile">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+        <span class="contador">0</span>
+      </button>
+      <button class="btn-mobile">
+        <ion-icon name="home-outline"></ion-icon>
+      </button>
+      <button class="btn-mobile">
+        <ion-icon name="heart-outline"></ion-icon>
+        <span class="contador">0</span>
+      </button>
+      <button class="btn-mobile">
+        <ion-icon name="grid-outline"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!--==================================== BANNER =================================-->
+    <div class="banner">
+      <div class="container">
+        <ul class="slider-container barra-rolagem">
+          <li class="slider-item">
+            <img src="/assets/images/banner-1.jpg" alt="ultima venda de moda feminina" class="banner-img">
+
+            <div class="banner-conteudo">
+              <p class="banner-subtitulo">Item de troca</p>
+              <h2 class="banner-titulo">Ultima venda de moda feminina</h2>
+              <p class="banner-texto"> Começando as &dollar;<b>20</b>.00</p>
+              <a class="banner-btn">Compre Agora</a>
+
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <img src="/assets/images/banner-2.jpg" alt="ultima venda de moda feminina" class="banner-img">
+
+            <div class="banner-conteudo">
+              <p class="banner-subtitulo">Acessorios de Tendencias</p>
+              <h2 class="banner-titulo">Oculos de Sol Modernos</h2>
+              <p class="banner-texto"> Começando as &dollar;<b>20</b>.00</p>
+              <a class="banner-btn">Compre Agora</a>
+
+            </div>
+          </li>
+
+          <li class="slider-item">
+            <img src="/assets/images/banner-3.jpg" alt="ultima venda de moda feminina" class="banner-img">
+
+            <div class="banner-conteudo">
+              <p class="banner-subtitulo">Oferta de Vendas</p>
+              <h2 class="banner-titulo">Ofertas de Verao</h2>
+              <p class="banner-texto"> Começando as &dollar;<b>20</b>.00</p>
+              <a class="banner-btn">Compre Agora</a>
+
+            </div>
+          </li>
+        </ul>
+
+
+      </div>
+
+    </div>
+
+    <!--==================================== CATEGORIAS =================================-->
+    <div class="categoria">
+      <div class="container">
+        <ul class="categoria-item-container barra-rolagem">
+          <!--================== CARTAO 1 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/dress.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Vestidos e Saias</h3>
+                <p class="categoria-item-quantidade">(53)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 2 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/coat.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Roupas de Inverno</h3>
+                <p class="categoria-item-quantidade">(58)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 3 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/glasses.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Oculos e Lentes</h3>
+                <p class="categoria-item-quantidade">(68)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 4 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/shorts.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Shorts & Jeans</h3>
+                <p class="categoria-item-quantidade">(84)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 5 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/tee.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Camisas</h3>
+                <p class="categoria-item-quantidade">(53)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 6 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/jacket.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Jaquetas</h3>
+                <p class="categoria-item-quantidade">(16)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 7 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/watch.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Relogios</h3>
+                <p class="categoria-item-quantidade">(27)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+          <!--================== CARTAO 8 =======================-->
+          <li class="categoria-item">
+            <div class="categoria-img-caixa">
+              <img src="/assets/images/icons/hat.svg" alt="Vestidos" width="30">
+            </div>
+            <div class="categoria-conteudo-caixa">
+              <div class="categoria-conteudo-flex">
+                <h3 class="categoria-item-titulo">Chapeus & Bones</h3>
+                <p class="categoria-item-quantidade">(53)</p>
+                <a href="" class="categoria-btn">Mostrar Todos</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="produto-container">
+      <div class="container">
+        <!-- ============================ BARRA LATERAL =================================-->
+        <div class="barra-lateral--modificada barra-rolagem ativo " js-barra-lateral-modificada>
+          <div class="barra-lateral-categoria">
+            <div class="barra-lateral-topo">
+              <h2 class="barra-lateral-titulo">Categoria</h2>
+              <button class="barra-lateral-btn-fechar" js-btn-fechar>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+            <ul class="barra-lateral-menu-categoria-lista">
+              <!-- ================= BLOCO 1 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu " js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/dress.svg" alt="" class="menu-titulo-img" width="20">
+                    <p class="menu-titulo">Roupas</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <!-- dropdown -->
+                <ul class="barra-lateral-submenu-categoria-lista  ativo  ">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Camisa</p>
+                      <data value="300" class="stock" title="Estoque disponivel">300</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Shorts & jeans</p>
+                      <data value="60" class="stock" title="Estoque disponivel">60</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Jaqueta</p>
+                      <data value="50" class="stock" title="Estoque disponivel">50</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Vestidos e Saias</p>
+                      <data value="50" class="stock" title="Estoque disponivel">50</data>
+                    </a>
+                  </li>
+                </ul>
+
+              </li>
+              <!-- ================= BLOCO 2 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu" js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/shoes.svg" alt="" class="menu-titulo-img" height="20" width="20">
+                    <p class="menu-titulo">Calçados</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <ul class="barra-lateral-submenu-categoria-lista">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Sports</p>
+                      <data value="45" class="stock" title="Estoque disponivel">45</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Formal</p>
+                      <data value="75" class="stock" title="Estoque disponivel">75</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Casual</p>
+                      <data value="35" class="stock" title="Estoque disponivel">35</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Calçados</p>
+                      <data value="26" class="stock" title="Estoque disponivel">26</data>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- ================= BLOCO 3 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu" js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/jewelry.svg" alt="" class="menu-titulo-img" height="20" width="20">
+                    <p class="menu-titulo">Joias</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <!-- ===========================  ACORDION ===================================== -->
+                <ul class="barra-lateral-submenu-categoria-lista">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Brincos</p>
+                      <data value="46" class="stock" title="Estoque disponivel">46</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Aneis de Casal</p>
+                      <data value="73" class="stock" title="Estoque disponivel">73</data>
+                    </a>
+                  </li>
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Colares</p>
+                      <data value="61" class="stock" title="Estoque disponivel">61</data>
+                    </a>
+                  </li>
+                </ul>
+
+              </li>
+              <!-- ================= BLOCO 4 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu" js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/perfume.svg" alt="" class="menu-titulo-img" height="20" width="20">
+                    <p class="menu-titulo">Perfume</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <!-- ===========================  ACORDION ===================================== -->
+                <ul class="barra-lateral-submenu-categoria-lista">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Desodorant</p>
+                      <data value="60" class="stock" title="Estoque disponivel">60</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Jaquetas</p>
+                      <data value="50" class="stock" title="Estoque disponivel">50</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Vestidos e Saias</p>
+                      <data value="87" class="stock" title="Estoque disponivel">87</data>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- ================= BLOCO 5 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu" js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/cosmetics.svg" alt="" class="menu-titulo-img" height="20" width="20">
+                    <p class="menu-titulo">Cosmeticos</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <!-- ===========================  ACORDION ===================================== -->
+                <ul class="barra-lateral-submenu-categoria-lista">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Shampoo</p>
+                      <data value="68" class="stock" title="Estoque disponivel">68</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Protetor Solar</p>
+                      <data value="46" class="stock" title="Estoque disponivel">46</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Mascara Corporal</p>
+                      <data value="79" class="stock" title="Estoque disponivel">79</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Kits de Maquiagem</p>
+                      <data value="23" class="stock" title="Estoque disponivel">23</data>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- ================= BLOCO 6 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu" js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/glasses.svg" alt="" class="menu-titulo-img" height="20" width="20">
+                    <p class="menu-titulo">Roupas</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <!-- ===========================  ACORDION ===================================== -->
+                <ul class="barra-lateral-submenu-categoria-lista">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Oculos</p>
+                      <data value="50" class="stock" title="Estoque disponivel">50</data>
+                    </a>
+                  </li>
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Lentes</p>
+                      <data value="48" class="stock" title="Estoque disponivel">48</data>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- ================= BLOCO 7 ========================== -->
+              <li class="barra-lateral-menu-categoria">
+                <button class="barra-lateral-acordion-menu" js-acordion-btn>
+                  <div class="menu-titulo-flex">
+                    <img src="/assets/images/icons/bag.svg" alt="" class="menu-titulo-img" height="20" width="20">
+                    <p class="menu-titulo">Mochilas</p>
+                  </div>
+                  <div>
+                    <ion-icon name="add-outline" class="icone-adicionar"></ion-icon>
+                    <ion-icon name="remove-outline" class="icone-remover"></ion-icon>
+                  </div>
+                </button>
+                <!-- ===========================  ACORDION ===================================== -->
+                <ul class="barra-lateral-submenu-categoria-lista">
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Bolsas de Compras</p>
+                      <data value="62" class="stock" title="Estoque disponivel">62</data>
+                    </a>
+                  </li>
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Mochila de Academia</p>
+                      <data value="35" class="stock" title="Estoque disponivel">35</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Bolsas</p>
+                      <data value="80" class="stock" title="Estoque disponivel">80</data>
+                    </a>
+                  </li>
+
+                  <li class="barra-lateral-submenu-categoria">
+                    <a href="" class="barra-lateral-submenu-titulo">
+                      <p class="produto-nome">Carteira</p>
+                      <data value="75" class="stock" title="Estoque disponivel">75</data>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+          <!-- =============================== MONSTRUARIO PRODUTOS ============================================== -->
+          <div class="monstuario-produtos">
+            <h3 class="mostruario-texto">Mais vendidos</h3>
+            <div class="mostruario-embrulho">
+              <div class="monstruario-container">
+                <!-- ==================== CARD 1 ============================ -->
+                <div class="monstruario">
+                  <a href="" class="mostruario-imagem-caixa">
+                    <img src="/assets/images/products/1.jpg" alt="Fabrica de Calçados infantil" width="75" height="75"
+                      class="monstruario-img">
+                  </a>
+                  <div class="monstruario-conteudo">
+                    <a href="">
+                      <h3 class="mostruario-titulo">Fabrica de calçados infantil</h3>
+                    </a>
+                    <div class="monstruario-avaliacao">
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <div class="caixa-preco">
+                      <del>$5.00</del>
+                      <p class="preco">$4.00</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ==================== CARD 2 ============================ -->
+                <div class="monstruario">
+                  <a href="" class="mostruario-imagem-caixa">
+                    <img src="/assets/images/products/2.jpg" alt="Fabrica de Calçados infantil" width="75" height="75"
+                      class="monstruario-img">
+                  </a>
+                  <div class="monstruario-conteudo">
+                    <a href="">
+                      <h3 class="mostruario-titulo">Camiseta masculina com capuz</h3>
+                    </a>
+                    <div class="monstruario-avaliacao">
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <div class="caixa-preco">
+                      <del>$7.00</del>
+                      <p class="preco">$7.00</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ==================== CARD 3 ============================ -->
+                <div class="monstruario">
+                  <a href="" class="mostruario-imagem-caixa">
+                    <img src="/assets/images/products/3.jpg" alt="Fabrica de Calçados infantil" width="75" height="75"
+                      class="monstruario-img">
+                  </a>
+                  <div class="monstruario-conteudo">
+                    <a href="">
+                      <h3 class="mostruario-titulo">Camisetas Femininas</h3>
+                    </a>
+                    <div class="monstruario-avaliacao">
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <div class="caixa-preco">
+                      <del>$5.00</del>
+                      <p class="preco">$3.00</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ==================== CARD 4 ============================ -->
+                <niv class="monstruario">
+                  <a href="" class="mostruario-imagem-caixa">
+                    <img src="/assets/images/products/4.jpg" alt="Fabrica de Calçados infantil" width="75" height="75"
+                      class="monstruario-img">
+                  </a>
+                  <div class="monstruario-conteudo">
+                    <a href="">
+                      <h3 class="mostruario-titulo">Chapéu de lã para homens</h3>
+                    </a>
+                    <div class="monstruario-avaliacao">
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <div class="caixa-preco">
+                      <del>$15.00</del>
+                      <p class="preco">$12.00</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ================================== BLOCO MONSTRUARIO =========================================== -->
+        <div class="produtos-caixa">
+
+          <div class="prudutos-minimos">
+            <div class="produtos-colecao">
+              <h2 class="titulo">Acabaram de Chegar</h2>
+              <div class="produtos-colecao-embrulho barra-rolagem">
+                <!-- COLEÇÃO DE CARTOES -->
+                <ul class="produtos-colecao-container">
+                  <!-- ===================   CARD-1   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">camiseta manga curta relaxada</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$45.00</p>
+                        <del>$12.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-2   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-2.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">camiseta manga curta relaxada</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$61.00</p>
+                        <del>$9.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-3   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-3.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Camisa media floral preta</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$76.00</p>
+                        <del>$25.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-4   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/shirt-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Camisa de algodão tingida de roupa pura</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$68.00</p>
+                        <del>$12.00</del>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- COLEÇÃO DE CARTOES -->
+                <ul class="produtos-colecao-container">
+                  <!-- ===================   CARD-1   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-5.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Jaqueta masculina de lã com zíper completo
+                        </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Jaquetas de inverno</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$61.00</p>
+                        <del>$11.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-2   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Jaquetas de couro de inverno masculinas</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas de inverno</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$32.00</p>
+                        <del>$20.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-3   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-3.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">
+                          Jaquetas de couro de inverno masculinas </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Jaquetas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$50.00</p>
+                        <del>$25.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-4   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/shorts-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Melhores bermudas básicas de Terry francês
+                        </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$20.00</p>
+                        <del>$10.00</del>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="produtos-colecao">
+              <h2 class="titulo">Acabaram de Chegar</h2>
+              <div class="produtos-colecao-embrulho barra-rolagem">
+                <!-- COLEÇÃO DE CARTOES -->
+                <ul class="produtos-colecao-container">
+                  <!-- ===================   CARD-1   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">camiseta manga curta relaxada</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$45.00</p>
+                        <del>$12.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-2   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-2.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">camiseta manga curta relaxada</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$61.00</p>
+                        <del>$9.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-3   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-3.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Camisa media floral preta</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$76.00</p>
+                        <del>$25.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-4   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/shirt-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Camisa de algodão tingida de roupa pura</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$68.00</p>
+                        <del>$12.00</del>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- COLEÇÃO DE CARTOES -->
+                <ul class="produtos-colecao-container">
+                  <!-- ===================   CARD-1   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-5.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Jaqueta masculina de lã com zíper completo
+                        </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Jaquetas de inverno</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$61.00</p>
+                        <del>$11.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-2   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Jaquetas de couro de inverno masculinas</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas de inverno</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$32.00</p>
+                        <del>$20.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-3   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-3.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">
+                          Jaquetas de couro de inverno masculinas </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Jaquetas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$50.00</p>
+                        <del>$25.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-4   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/shorts-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Melhores bermudas básicas de Terry francês
+                        </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$20.00</p>
+                        <del>$10.00</del>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="produtos-colecao">
+              <h2 class="titulo">Acabaram de Chegar</h2>
+              <div class="produtos-colecao-embrulho barra-rolagem">
+                <!-- COLEÇÃO DE CARTOES -->
+                <ul class="produtos-colecao-container">
+                  <!-- ===================   CARD-1   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">camiseta manga curta relaxada</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$45.00</p>
+                        <del>$12.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-2   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-2.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">camiseta manga curta relaxada</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$61.00</p>
+                        <del>$9.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-3   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/clothes-3.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Camisa media floral preta</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$76.00</p>
+                        <del>$25.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-4   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/shirt-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Camisa de algodão tingida de roupa pura</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$68.00</p>
+                        <del>$12.00</del>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <!-- COLEÇÃO DE CARTOES -->
+                <ul class="produtos-colecao-container">
+                  <!-- ===================   CARD-1   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-5.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Jaqueta masculina de lã com zíper completo
+                        </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Jaquetas de inverno</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$61.00</p>
+                        <del>$11.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-2   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Jaquetas de couro de inverno masculinas</h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas de inverno</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$32.00</p>
+                        <del>$20.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-3   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/jacket-3.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">
+                          Jaquetas de couro de inverno masculinas </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Jaquetas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$50.00</p>
+                        <del>$25.00</del>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- ===================   CARD-4   ========================= -->
+                  <li class="colecao">
+                    <a href="#" class="colecao-imagem-caixa">
+                      <img src="./assets/images/products/shorts-1.jpg" alt="" class="colecao-img" alt="Relaxe"
+                        width="70">
+                    </a>
+                    <div class="colecao-conteudo">
+                      <a href="">
+                        <h4 class="colecao-titulo">Melhores bermudas básicas de Terry francês
+                        </h4>
+                      </a>
+                      <a href="#" class="colecao-categoria">Roupas</a>
+                      <div class="caixa-preco">
+                        <p class="preco">$20.00</p>
+                        <del>$10.00</del>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ================================== PRODUTOS DESTACADOS =========================================== -->
+        <div class="produtos-destacados">
+          <h2 class="titulo">Acordo do Dia</h2>
+          <ul class="produtos-destacados-embrulho barra-rolagem">
+            <li class="produtos-destacados-container">
+              <div class="produtos-destacados-colecao">
+                <div class="produtos-destacados__banner">
+                  <img src="./assets/images/products/shampoo.jpg" alt="Shampoo condicionador e Mascaras faciais"
+                    class="produtos-destacados__img">
+                </div>
+                <div class="produtos-destacados__conteudo">
+                  <div class="prudutos-destacados__avaliacao">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+                  <a href="#">
+                    <h3 class="produtos-destacados-titulo">Shampoo condicionador e Mascaras faciais
+                    </h3>
+                  </a>
+                  <p class="produtos-destacados__desconto-texto">
+                    Seu cabelo é valioso para você e para nós. Por isso, os cabeleireiros da
+                    Palmolive combinaram nossa tecnologia com queratina, ceramidas e ingredientes de
+                    origem natural para que você tenha um cabelo
+                  </p>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$150.00</p>
+                  <del>$200.00</del>
+
+                </div>
+
+                <button class="botao-carrinho">Adicionar ao carrinho</button>
+
+                <div class="produtos-destacados__status">
+                  <div class="embrulho">
+                    <p>
+                      ja vendido: <b>20</b>
+                    </p>
+                    <p>
+                      acessivel: <b>40</b>
+                    </p>
+                  </div>
+                  <div class="produtos-destacados__barra-status">
+
+                  </div>
+                </div>
+
+                <div class="caixa-contagem-regresiva">
+                  <p class="contagem-regressiva__desconto">
+                    Se apresse! Oferta termina em
+                  </p>
+
+                  <div class="contador">
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">360</p>
+                      <p class="exibicao-texto">Dias</p>
+                    </div>
+
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">24</p>
+                      <p class="exibicao-texto">Horas</p>
+                    </div>
+
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">59</p>
+                      <p class="exibicao-texto">Minutos</p>
+                    </div>
+
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">00</p>
+                      <p class="exibicao-texto">Segundos</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- FIM DO CARTAO -->
+              </div>
+              <!-- FIM PRODUTOS DESTACADOS CONTAINER -->
+            </li>
+            <li class="produtos-destacados-container">
+              <div class="produtos-destacados-colecao">
+                <div class="produtos-destacados__banner">
+                  <img src="./assets/images/products/jewellery-1.jpg" alt="Shampoo condicionador e Mascaras faciais"
+                    class="produtos-destacados__img">
+                  <!-- FIM CAIXA IMAGEM -->
+                </div>
+                <div class="produtos-destacados__conteudo">
+                  <div class="prudutos-destacados__avaliacao">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+                  <a href="#">
+                    <h3 class="produtos-destacados-titulo">Brincos de diamante de ouro rosa
+                    </h3>
+                  </a>
+                  <p class="produtos-destacados__desconto-texto">Lorem ipsum dolor sit amet
+                    consectetur, adipisicing elit. Fugiat sapiente facere perspiciatis fugit
+                    doloribus alias, mollitia nostrum ducimus. Excepturi deleniti tenetur officia
+                    facilis nostrum blanditiis esse quam. Illum, dicta distinctio.</p>
+                  <!-- FIM CONTEUDO -->
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$150.00</p>
+                  <del>$200.00</del>
+
+                </div>
+
+                <button class="botao-carrinho">Adicionar ao carrinho</button>
+
+                <div class="produtos-destacados__status">
+                  <div class="embrulho">
+                    <p>
+                      ja vendido: <b>20</b>
+                    </p>
+                    <p>
+                      acessivel: <b>40</b>
+                    </p>
+                  </div>
+                  <!-- DESENHA UMA BARRA DE STATUS VAZIA COM ALTURA DE 10PX -->
+                  <div class="produtos-destacados__barra-status">
+
+                  </div>
+                </div>
+
+                <div class="caixa-contagem-regresiva">
+                  <p class="contagem-regressiva__desconto">
+                    Se apresse! Oferta termina em
+                  </p>
+
+                  <div class="contador">
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">360</p>
+                      <p class="exibicao-texto">Dias</p>
+                    </div>
+
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">24</p>
+                      <p class="exibicao-texto">Horas</p>
+                    </div>
+
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">59</p>
+                      <p class="exibicao-texto">Minutos</p>
+                    </div>
+
+                    <div class="contador-conteudo">
+                      <p class="numero-exibicao">00</p>
+                      <p class="exibicao-texto">Segundos</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- FIM DO CARTAO -->
+              </div>
+              <!-- FIM PRODUTOS DESTACADOS CONTAINER -->
+            </li>
+            <!-- FIM DO EMBRULHO PRODUTOS DESTACADOS -->
+          </ul>
+          <!-- FIM BLOCO PROTUDOS DESTACADOS -->
+        </div>
+        <!--================== PRODUTOS GRID 2:07:41 =============================-->
+        <div class="produtos-principais">
+          <h2 class="titulo">Novos Produtos</h2>
+          <div class="produtos-grid">
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/jacket-3.jpg" alt="
+								jaquetas masculinas de couro de inverno" class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/jacket-4.jpg" alt="
+								jaquetas masculinas de couro de inverno" class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine"> - 15%</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Jaqueta</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">Jaquetas masculinas de couro de inverno</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/watch-3.jpg" alt="Camisa de Algodao Tingida"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/watch-4.jpg" alt="Camisa de Algodao Tingida"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada preto">venda</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Relogios</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">bolsa de couro para relógio de bolso</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/watch-1.jpg" alt="Camisa de Algodao Tingida"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/watch-2.jpg" alt="Camisa de Algodao Tingida"
+                  class="produtos-img  hover	" width="300">
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Relogios</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">relógio inteligente vital plus</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/shoe-2.jpg" alt="Camisa de Algodao Tingida"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/shoe-2_1.jpg" alt="Camisa de Algodao Tingida"
+                  class="produtos-img  hover	" width="300">
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Casual</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">sapatos casuais masculinos marrons</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/clothes-3.jpg" alt="Saia media floral preta"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/clothes-4.jpg" alt="Saia media floral preta"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada rosa">Novo</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Saia</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">Saia media floral preta</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/party-wear-1.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/party-wear-2.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada rosa">Venda</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Roupa de festa</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">Sapatos femininos para festa</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/jacket-1.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/jacket-2.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img  hover	" width="300">
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Jaquetas</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">jaquetas masculinas de couro & inverno</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$48.00</p>
+                  <del>$75</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/sports-2.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/sports-4.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada rosa">Venda</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Tenis</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">tênis de caminhada e corrida</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$58.00</p>
+                  <del>$64</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/shorts-1.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/shorts-2.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada rosa">Venda</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Shorts</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">melhores bermudas de moleton francesas básicas</h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$78.00</p>
+                  <del>&85</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/shoe-1.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/shoe-1_1.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada rosa">Venda</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Formal</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">
+                    sapatos masculinos de couro formais </h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$50.00</p>
+                  <del>&65.00</del>
+                </div>
+              </div>
+            </div>
+
+            <div class="monstruario">
+              <div class="monstruario-banner-caixa">
+                <img src="/assets/images/products/shorts-1.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img padrao" width="300">
+                <img src="/assets/images/products/shorts-2.jpg" alt="Sapatos femininos para festa"
+                  class="produtos-img  hover	" width="300">
+                <p class="artigo-vitrine inclinada rosa">Venda</p>
+                <!-- CAIXA DE ICONES -->
+                <div class="monstruario-acao">
+                  <button class="btn-acao">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="repeat-outline"></ion-icon>
+                  </button>
+                  <button class="btn-acao">
+                    <ion-icon name="bag-add-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+              <div class="monstruario-conteudo">
+                <a href="" class="monstruario-categoria">Shorts</a>
+                <a href="">
+                  <h2 class="monstruario-titulo">
+
+                    melhor calção de moletom francês terry basics </h2>
+                </a>
+                <!-- CAIXA DE ESTRELAS -->
+                <div class="monstruario-avaiacao">
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                </div>
+                <div class="caixa-preco">
+                  <p class="preco">$78.00</p>
+                  <del>&85.00</del>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FIM CONTAINER -->
+      </div>
+      <!-- FIM BLOCO PRODUTOS -->
+    </div>
+
+
+    <!--================== TESTEMUNHAS ======================================-->
+    <div class="container">
+      <div class="testemunhas-caixa">
+        <!-- TESTEMUNHAS -->
+        <div class="testemunhas">
+          <h2 class="titulo">Testemunhas</h2>
+          <div class="testemuhas-cartao">
+            <img src="/assets/images/testimonial-1.jpg" alt="" class="testemunhas-banner" width="80" height="80">
+            <p class="testemunhas-nome">Alexa Doe</p>
+            <p class="testemunhas-titulo">CEO & Fundadora</p>
+            <img src="./assets/images/icons/quotes.svg" alt="cotacao" class="cotacao" width="26">
+            <p class="testemunhas-descricao">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, nobis
+              consequatur optio molestias dignissimos aliquid perferendis quas mollitia consectetur voluptas. Minima
+              atque explicabo doloribus ea cum aliquid temporibus harum laudantium.
+            </p>
+          </div>
+        </div>
+        <!-- FIM CAIXA TESTEMUNHAS -->
+      </div>
+
+      <!--============================== CHAMADA AÇÃO ===================================== -->
+
+      <div class="cta-container">
+        <img src="assets/images/cta-banner.jpg" alt="coleção de verao" class="cta-banner" width="100%">
+        <!-- CAIXA CONTEUDO -->
+        <a href="#" class="cta-conteudo">
+          <p class="disconto">25% Desconto</p>
+          <h2 class="cta-titulo">Coleção de Verao</h2>
+          <p class="cta-texto">Inicio @ $10</p>
+          <button class="cta-btn">Compre Agora</button>
+        </a>
+        <!-- FIM CAIXA CONTEUDO  -->
+      </div>
+
+      <!--============================== SERVIÇO ===================================== -->
+      <div class="servico">
+        <h2 class="titulo">Nossos serviços</h2>
+        <!-- CAIXA DE APERTO-->
+        <div class="servico-container">
+
+          <!-- CAIXA CLICAVEL -->
+          <a href="#" class="servico-item">
+            <!-- CAIXA DO ICONE -->
+            <div class="servico-icone">
+              <ion-icon name="boat-outline"></ion-icon>
+            </div>
+            <!-- CAIXA CONTEUDO -->
+            <div class="servico-conteudo">
+              <h3 class="servico-titulo">Entrega em Todo mundo</h3>
+              <p class="servico-desconto">
+                Para pedidos acima de $100
+              </p>
+            </div>
+          </a>
+          <!-- CAIXA CLICAVEL -->
+          <a href="#" class="servico-item">
+            <!-- CAIXA DO ICONE -->
+            <div class="servico-icone">
+              <ion-icon name="rocket-outline"></ion-icon>
+            </div>
+            <!-- CAIXA CONTEUDO -->
+            <div class="servico-conteudo">
+              <h3 class="servico-titulo">Entrega no dia segunte</h3>
+              <p class="servico-desconto">
+
+                Somente entrega de pedidos
+              </p>
+            </div>
+          </a>
+          <!-- CAIXA CLICAVEL -->
+          <a href="#" class="servico-item">
+            <!-- CAIXA DO ICONE -->
+            <div class="servico-icone">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+            <!-- CAIXA CONTEUDO -->
+            <div class="servico-conteudo">
+              <h3 class="servico-titulo">Melhor Suporte online</h3>
+              <p class="servico-desconto">
+                Horario: das 8hs , as 23:00hs
+              </p>
+            </div>
+          </a>
+          <!-- CAIXA CLICAVEL -->
+          <a href="#" class="servico-item">
+            <!-- CAIXA DO ICONE -->
+            <div class="servico-icone">
+              <ion-icon name="arrow-undo-outline"></ion-icon>
+            </div>
+            <!-- CAIXA CONTEUDO -->
+            <div class="servico-conteudo">
+              <h3 class="servico-titulo">Poltica de devolução</h3>
+              <p class="servico-desconto">
+                Horario: das 8hs , as 23:00hs
+              </p>
+            </div>
+          </a>
+
+          <!-- CAIXA CLICAVEL -->
+          <a href="#" class="servico-item">
+            <!-- CAIXA DO ICONE -->
+            <div class="servico-icone">
+              <ion-icon name="send-outline"></ion-icon>
+            </div>
+            <!-- CAIXA CONTEUDO -->
+            <div class="servico-conteudo">
+              <h3 class="servico-titulo">30% dinheiro de volta</h3>
+              <p class="servico-desconto">
+                Horario: das 8hs , as 23:00hs
+              </p>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+      <!-- FIM BLOCO SERVIÇOS -->
+    </div>
+    <!-- FIM CONTAINER  -->
+
+    <!-- ========================== BLOG ================================ -->
+    <div class="blog">
+      <div class="container">
+        <div class="blog-container barra-rolagem">
+
+          <div class="blog-card">
+            <a href="#" class="blog-banner">
+              <img src="assets/images/blog-1.jpg" alt="Para a classe de executivos" class="blog-banner" width="300">
+            </a>
+            <!-- CAIXA AO LADO DA IMAGEM -->
+            <div class="blog-conteudo">
+
+              <a href="#" class="blog-categoria">Fashion</a>
+
+              <a href="">
+                <h3 class="blog-titulo">Guia de Roupa de verejo para executivos</h3>
+              </a>
+              <p class="blog-meta">
+                Por <cite>Thiago Silva</cite> / <time datetime="2022-11-06">06 de , novembro , de 2022</time>
+
+              </p>
+            </div>
+            <!-- FIM DA CAIXA CONTEUDO -->
+          </div>
+          <!-- FIM DO CARD -->
+
+          <div class="blog-card">
+            <a href="#" class="blog-banner">
+              <img src="assets/images/blog-2.jpg" alt="
+              tendências da moda na calçada: como vencer a batalha do pichup" class="blog-banner" width="300">
+            </a>
+            <!-- CAIXA AO LADO DA IMAGEM -->
+            <div class="blog-conteudo">
+
+              <a href="#" class="blog-categoria">Roupas</a>
+
+              <a href="">
+                <h3 class="blog-titulo">
+                  Tendências da moda na calçada: como vencer a batalha do pichup</h3>
+              </a>
+              <p class="blog-meta">
+                Por <cite>Andre Soares</cite> / <time datetime="2022-11-04">04 de , novembro , de 2022</time>
+
+              </p>
+            </div>
+            <!-- FIM DA CAIXA CONTEUDO -->
+          </div>
+          <!-- FIM DO CARD -->
+
+          <div class="blog-card">
+            <a href="#" class="blog-banner">
+              <img src="assets/images/blog-3.jpg" alt="
+              Fornecedores de EBT: reivindique sua parte da receita do esboço do SNAP" class="blog-banner" width="300">
+            </a>
+            <!-- CAIXA AO LADO DA IMAGEM -->
+            <div class="blog-conteudo">
+
+              <a href="#" class="blog-categoria">Calçados</a>
+
+              <a href="">
+                <h3 class="blog-titulo">
+                  Fornecedores de EBT: reivindique sua parte da receita do esboço do SNAP</h3>
+              </a>
+              <p class="blog-meta">
+                Por <cite>Rodolfo Brito</cite> / <time datetime="2022-11-01">01 de , novembro , de 2022</time>
+
+              </p>
+            </div>
+            <!-- FIM DA CAIXA CONTEUDO -->
+          </div>
+          <!-- FIM DO CARD -->
+
+          <div class="blog-card">
+            <a href="#" class="blog-banner">
+              <img src="assets/images/blog-4.jpg" alt="os mais comprados esse mes" class="blog-banner" width="300">
+            </a>
+            <!-- CAIXA AO LADO DA IMAGEM -->
+            <div class="blog-conteudo">
+
+              <a href="#" class="blog-categoria">Eletronicos</a>
+
+              <a href="">
+                <h3 class="blog-titulo">Os mais comprados esse mes</h3>
+              </a>
+              <p class="blog-meta">
+                Por <cite>Rodolfo brito</cite> / <time datetime="2022-11-06">06 de , novembro , de 2022</time>
+
+              </p>
+            </div>
+            <!-- FIM DA CAIXA CONTEUDO -->
+          </div>
+          <!-- FIM DO CARD -->
+
+        </div>
+        <!-- FIM DA CIAXA BLOG CONTAINER -->
+      </div>
+      <!-- FIM CONTAINER BLOG -->
+    </div>
+
+  </main>
+  <!-- 2:39:21 -->
+  <footer>
+    <!-- PARTE DE CIMA DO RODAPE -->
+    <div class="rodape-categoria">
+      <div class="container">
+        <h2 class="rodape-categoria-titulo">Diretorio de marca</h2>
+        <div class="rodape-categoria-caixa">
+          <h3 class="categoria-box-titulo">Fashion :</h3>
+
+          <a href="" class="rodape-categoria-link">Camiseta</a>
+          <a href="" class="rodape-categoria-link">Camisas</a>
+          <a href="" class="rodape-categoria-link">Shorts & Jeans</a>
+          <a href="" class="rodape-categoria-link">Jaquetas</a>
+          <a href="" class="rodape-categoria-link">Vestidos & Saias</a>
+          <a href="" class="rodape-categoria-link">Roupas interiores</a>
+          <a href="" class="rodape-categoria-link">Meias</a>
+        </div>
+
+        <div class="rodape-categoria-caixa">
+          <h3 class="categoria-box-titulo">Calçados :</h3>
+
+          <a href="" class="rodape-categoria-link">Sport</a>
+          <a href="" class="rodape-categoria-link">Formal</a>
+          <a href="" class="rodape-categoria-link">Chuteiras</a>
+          <a href="" class="rodape-categoria-link">Casual</a>
+          <a href="" class="rodape-categoria-link">Sapatos de cowboy</a>
+          <a href="" class="rodape-categoria-link">Sapatos de Segurança</a>
+          <a href="" class="rodape-categoria-link">Sapatos de Festa</a>
+          <a href="" class="rodape-categoria-link">Sapatos de Marca</a>
+          <a href="" class="rodape-categoria-link">Replicas</a>
+          <a href="" class="rodape-categoria-link">Sapatos longos</a>
+        </div>
+
+        <div class="rodape-categoria-caixa">
+          <h3 class="categoria-box-titulo">Joaleria :</h3>
+
+          <a href="" class="rodape-categoria-link">Colar</a>
+          <a href="" class="rodape-categoria-link">Brincos</a>
+          <a href="" class="rodape-categoria-link">Aneis de Casal</a>
+          <a href="" class="rodape-categoria-link">Pingentes</a>
+          <a href="" class="rodape-categoria-link">Cristal</a>
+          <a href="" class="rodape-categoria-link">Pulseiras</a>
+          <a href="" class="rodape-categoria-link">Bracelets</a>
+          <a href="" class="rodape-categoria-link">Cristal de nariz</a>
+          <a href="" class="rodape-categoria-link">Corrente</a>
+          <a href="" class="rodape-categoria-link">Brincos</a>
+          <a href="" class="rodape-categoria-link">Aneis de Casal</a>
+        </div>
+
+        <div class="rodape-categoria-caixa">
+          <h3 class="categoria-box-titulo">Cosmeticos :</h3>
+
+          <a href="" class="rodape-categoria-link">Shampoo</a>
+          <a href="" class="rodape-categoria-link">Mascara Corporal</a>
+          <a href="" class="rodape-categoria-link">Mascara Facial</a>
+          <a href="" class="rodape-categoria-link">Kit de Maquiagem</a>
+          <a href="" class="rodape-categoria-link">Batom</a>
+          <a href="" class="rodape-categoria-link">Perfume</a>
+          <a href="" class="rodape-categoria-link">Sabonete corporal</a>
+          <a href="" class="rodape-categoria-link">Esfregador</a>
+          <a href="" class="rodape-categoria-link">Gel de Cabelo</a>
+          <a href="" class="rodape-categoria-link">Cor de Cabelo</a>
+          <a href="" class="rodape-categoria-link">Tintura para cabelo</a>
+          <a href="" class="rodape-categoria-link">Protetor solar</a>
+          <a href="" class="rodape-categoria-link">Perda de pele</a>
+          <a href="" class="rodape-categoria-link">Forro</a>
+          <a href="" class="rodape-categoria-link">Batom</a>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- PARTE DA NAVEGAÇÃO RODAPE -->
+    <div class="rodape-nav">
+        <div class="container">
+            <ul class="rodape-lista-navegacao">
+              <li class="rodape-nav-item">
+                <h2 class="nav-titulo">Categorias Populares</h2>
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Fashion</a>
+
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Eletronicos</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Cosmeticos</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Saude</a>
+                
+              </li>
+
+              
+            </ul>
+
+            <ul class="rodape-lista-navegacao">
+              <li class="rodape-nav-item">
+                <h2 class="nav-titulo">Produtos</h2>
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Preços Baixos</a>
+
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Novos produtos</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Mais vendidos</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Fale conosco</a>
+                
+              </li>
+
+              
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Mapa do site</a>
+                
+              </li>
+
+              
+            </ul>
+
+            <ul class="rodape-lista-navegacao">
+              <li class="rodape-nav-item">
+                <h2 class="nav-titulo">Nossa empresa</h2>
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Delivery</a>
+
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Novas Noticias</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Termos e condiçoes</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Sobre nos</a>
+                
+              </li>
+
+              
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Pagamento seguro</a>
+                
+              </li>
+
+              
+            </ul>
+
+            <ul class="rodape-lista-navegacao">
+              <li class="rodape-nav-item">
+                <h2 class="nav-titulo">Serviços</h2>
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Preços Baixos</a>
+
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Novos Produtos</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Mais Vendidos</a>
+                
+              </li>
+
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Contato</a>
+                
+              </li>
+
+              
+              <li class="rodape-nav-item">
+                <a href="#" class="rodape-nav-link">Mapa do Site</a>
+                
+              </li>
+
+              
+            </ul>
+
+            <ul class="rodape-lista-navegacao">
+               
+              <li class="rodape-nav-item">
+               <h2 class="nav-titulo">Contato</h2> 
+              </li>
+   
+              <li class="rodape-nav-item flex">
+                <div class="caixa-icone">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+
+                <address class="content">
+                       Rua luzer cogan , São Paulo, desde 1988
+                </address>
+              </li>
+
+              <li class="rodape-nav-item flex">
+                <div class="caixa-icone">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+
+                <a href="tel:+607936-8058" class="rodape-nav-link">(607) 936-8058</a>
+              </li>
+
+              <li class="rodape-nav-item flex">
+                <div class="caixa-icone">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+
+                <a href="mailto:thiagojklb@gmail.com" class="rodape-nav-link">thiagojklb@gmail.com</a>
+                </li>
+              
+            </ul>
+
+            <ul class="rodape-lista-navegacao">
+              <h2 class="nav-titulo">Siga-nos</h2>
+            </ul>
+
+            <li class="rodape-nav-item">
+              <!-- CAIXA REDES SOCIAIS -->
+              <ul class="redes-sociais">
+                <li class="rodape-nav-item flex">
+                  <a href="#" class="rodape-nav-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+
+                  </a>
+                </li>
+
+                <li class="rodape-nav-item flex">
+                  <a href="#" class="rodape-nav-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+
+                  </a>
+                </li>
+
+                <li class="rodape-nav-item flex">
+                  <a href="#" class="rodape-nav-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+
+                  </a>
+                </li>
+
+                <li class="rodape-nav-item flex">
+                  <a href="#" class="rodape-nav-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+        </div>
+    </div>
+
+    <div class="rodape-inferior">
+      <div class="container">
+           <img src="/assets/images/payment.png" alt="metodo de pagamento" class="pagamento-img">
+
+           <p class="copyrigth">
+              Copyrigth &copy; <a href="#">Anon</a>Todos os direitos reservados.
+           </p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <form action="">
+       <label for="">Login</label>
+       <input type="text" placeholder="senha" required  name="campo">
+       <label for="">senha</label>
+       <input type="password" required id=""  class="" name="campo">
+  </form>
+
+
+
+  <!-- ION ICON -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- video pausado 39.23 -->
+<!-- https://www.youtube.com/watch?v=3l8Lob4ysI0&t=4458s -->
+<!-- video pausado 43:13 -->
+<!-- video pausado 47:00 -->
+<!-- video pausado 50.06 -->
+<!-- video pausado 1:07:09 -->
+<!-- video pausado 1:13:37  estudar e entender depois-->
+<!-- video pausado 1:20:47 -->
+<!-- video pausado 1:22:55  -->
+<!-- video pausado 1:26:22  -->
+<!--construção da sidebar 1:27:46 -->
+<!-- estilização da sidebar 1:33:53-->
+<!-- construção dos produtos minimos 1:46:57 -->
+<!-- estilização dos produtos minimos 1:49:43 -->
+
+
+<!-- 
+      ANOTAÇOES
+
+      O POSITION FIXED POR PADRAO QUEM VAI DEFINIR A ALTURA E LARGURA É O CONTEUDO
+
+      O CONTEUDO DEFINE A ALTURA E LARGURA DO CONTAINER
+      SE EU DEFINIR WIDTH 100% ELE VAI PEGAR TODA A LARGURA DA TELA
+      SEU EU NÃO DEFINIR COR O FUNDO FICARA TRANSPARENTE
+
+      Analizar a linha 628 do css
+
+      scroll-snap-type : o scroll não rola de forma automatica mas trava no proximo elemento
+
+      propiedades para estudar
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+ -->
+
+
+<!-- 
+
+    https://www.youtube.com/watch?v=3l8Lob4ysI0&t=4458s
+
+
+criação das propiedades customizadas root 10:11 
+
+
+1 criação da tela sobreposta  13:59
+
+2 estilização da tela sobreposta 16:64
+
+criação do modal 14:09
+
+estilização do modal 17:48
+
+javascript modal 24:49
+
+criação das notificaçoes popup 26:58
+
+estilização das notificaçoes popup 28:27
+
+javascript notificaçoes 33:40
+
+criação do header topo 35:28
+
+criação header main 37:42
+
+criação header busca 38:11
+
+criação header ação usuario 38:41
+
+criação do menu desktop 39:20
+
+
+criação da barra de navegação inferior  fixa 43:24
+
+criação da barra de navagação mobile 44:47 <nav class="mobile-navigation-menu has-scrollbar">
+
+estilização do header-main principal 50:04
+
+estilização da barra inferior fixa 53:20
+
+estilização da barra de navegação mobile 55:23
+
+javascript barra navegação mobile e inferior fixa e tela sobreposta 1:07:10
+
+criação conteudo principal banner 1:14:20
+
+estilização banner 1:16:13
+
+criação das categorias 1:20:50
+
+estilização das categorias 1:23:11 
+
+criação dos produtos sidebar 1:27:36
+
+criação do mostruario 1:31:37
+
+estilização sidebar 1:34:03 
+
+criando produtos caixa de produtos  minimos 1:46:58
+
+estilizando produtos minimos 1:49:44
+
+criação produtos em destaque : 1:56:13
+
+estilização produtos em destaque 1:59:59
+
+criação produtos grid 2:07:48 
+
+estilizaçao prudutos grid 2:10:17
+
+criação das testemunhas e serviço 2:22:27
+
+estilização das testemunhas e cerviço 2:24:02
+
+criação cta 2:26:11
+
+estilização cta 2:27:13
+
+criação cerviço 2:30:26 
+
+estilização cerviço  2:31:42 
+
+criação blog 2:34:22
+
+estilização blog 2:36:09
+
+criação footer categoria 2:39:22
+
+criação footer nav 2:40:40
+
+criação footer parte de baixo 2:44:34
+
+estilização footer 2:45:26
+
+ajustando a responsividade 2:56:58
+
+
+
+proximo projeto  https://www.youtube.com/watch?v=xOCeFuhDocA&t=61s
+
+
+
+
+.prudutos-minimos .colecao-titulo {
+    color: var(--eerie-blacK);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-600);
+    text-transform: capitalize;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+        width: max-content; faz o elemento pai pegar a largura do elemento filho
+}
+
+
+Fatal: no email was given and auto-detection is disabled
+JANUARY 4, 2021 PIYUSH K SINGH1 COMMENT
+Premise
+Received the following error during code commit.
+
+fatal: no email was given and auto-detection is disabled
+
+Solution
+This error is due to the fact that there’s no local user setting found. We need to update this setting which will be used to create logs, on code commit.
+
+Launch Git Bash.
+Run the following cmd
+1
+2
+git config --global user.name "your_name"
+git config --global user.email "your_email_id"
+  -->

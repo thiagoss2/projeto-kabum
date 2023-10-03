@@ -1,0 +1,78 @@
+@import url("/assets/css/root.css");
+
+/* ------------------------------ BLOCO COMENTARIOS ------------------------------------- */
+
+
+.comentarios {
+  background-color: var(--cor-cartao);
+  color: var(--cor-textos);
+  padding: 20px 0 35px 0 ;
+  border-radius:  5px;
+  max-width:600px;
+  width: 100%;
+  margin:auto;
+}
+.comentarios-bloco {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.comentarios__bloco-adicionar-remover .comentarios__bloco-btn {
+  padding: 5px;
+  background-color: var(--cor-botoes);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+.comentarios__bloco-btn ion-icon {
+  color:var(--cor-numeros-verde);
+  color: white;  
+ 
+}
+
+
+.comentarios__bloco-btn .hydrated:hover {
+   color:var(--cor-numeros-verde);
+   cursor: pointer;
+
+}
+
+
+.comentarios-bloco__conteudo-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comentarios-bloco__perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comentarios-bloco__texto {
+  font-size: .8rem;
+}
+.comentarios-bloco__perfil time {
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--cor-textos-fraca);
+}
+.comentarios-bloco__avatar {
+  border-radius: 20px;
+}
+.comentarios-bloco__resposta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--cor-botoes);
+  font-weight: bold;
+} 
+.comentarios-bloco__conteudo-corpo .comentarios-titulo {
+  font-size: .7rem;
+  line-height: 1.5;
+}

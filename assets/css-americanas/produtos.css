@@ -1,0 +1,45 @@
+.produtos  {
+
+}
+
+.produtos__titulo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #666666;
+
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.produtos__cards {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+
+}
+
+.produtos__card {
+  width: 232px;
+  padding: 0 15px;
+
+  background-color: #fff;
+
+  border-radius: 10px;
+
+
+}
+
+.produtos__link {}
+
+.produtos__caixa-img {
+  padding: 16px 42px ;
+}
+
+
+
+.produtos__descricao {
+    font-size: 15px;
+    
+
+    
+}
